@@ -1,0 +1,21 @@
+additionalProperties:
+  apiPackage: com.zamzar.api.core
+  artifactDescription: Java SDK for the Zamzar API
+  artifactId: zamzar-java
+  artifactUrl: https://github.com/zamzar/zamzar-java
+  developerEmail: api-sdks@zamzar.com
+  developerName: Zamzar
+  developerOrganization: Zamzar Ltd
+  developerOrganizationUrl: https://github.com/zamzar
+  groupId: com.zamzar
+  hideGenerationTimestamp: true
+  modelPackage: com.zamzar.api.model
+  invokerPackage: com.zamzar.api.invoker
+  licenseName: MIT
+  licenseUrl: https://opensource.org/licenses/MIT
+  scmConnection: scm:git:git://github.com/zamzar/zamzar-java.git
+  scmDeveloperConnection: scm:git:ssh://github.com:zamzar/zamzar-java.git
+  scmUrl: https://github.com/zamzar/zamzar-java
+
+apiTests: false
+modelTests: false
