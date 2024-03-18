@@ -21,7 +21,7 @@ generate: up
 	@$(eval VERSION=$(shell $(MVN_CMD) help:evaluate -Dexpression=project.version -q -DforceStdout))
 	@$(GENERATOR_CMD) $(GENERATE_ARGS) --additional-properties=artifactVersion=$(VERSION)
 
-build: generate
+build: up
 	@$(MVN_CMD) clean test-compile
 
 test: build
@@ -41,14 +41,14 @@ endif
 ifndef MVN_CENTRAL_PASSWORD
 	$(error MVN_CENTRAL_PASSWORD is not set)
 endif
-ifndef GPG_PRIVATE_KEY_PATH
-	$(error GPG_PRIVATE_KEY_PATH is not set)
+ifndef GPG_PRIVATE_KEY
+	$(error GPG_PRIVATE_KEY is not set)
 endif
 ifndef GPG_PASSPHRASE
 	$(error GPG_PASSPHRASE is not set)
 endif
 	@docker compose exec maven mkdir -p /root/.m2
 	@docker compose exec maven sh -c 'echo "<settings><servers><server><id>central</id><username>$(MVN_CENTRAL_USERNAME)</username><password>$(MVN_CENTRAL_PASSWORD)</password></server></servers></settings>" > /root/.m2/settings.xml'
-	@docker compose cp $(GPG_PRIVATE_KEY_PATH) maven:/root/api-sdks.asc
+	@docker compose exec maven sh -c 'echo "$(GPG_PRIVATE_KEY)" > /root/api-sdks.asc'
 	@docker compose exec maven gpg --batch --import --pinentry-mode loopback --passphrase "$(GPG_PASSPHRASE)" /root/api-sdks.asc
 	@$(MVN_CMD) deploy -DskipTests -Dgpg.keyname=api-sdks -Dgpg.passphrase=$(GPG_PASSPHRASE)
