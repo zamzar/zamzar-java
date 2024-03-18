@@ -12,4 +12,5 @@ gradle.properties
 gradlew
 gradlew.bat
 pom.xml
+README.md
 settings.gradle

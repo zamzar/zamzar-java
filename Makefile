@@ -18,8 +18,8 @@ sync:
 	@curl -sSL $(SPEC_REMOTE) > $(SPEC)
 
 generate: up
-	@$(eval VERSION=$(shell $(MVN_CMD) help:evaluate -Dexpression=project.version -q -DforceStdout))
-	@$(GENERATOR_CMD) $(GENERATE_ARGS) --additional-properties=artifactVersion=$(VERSION)
+	@$(eval CURRENT_VERSION=$(shell $(MVN_CMD) help:evaluate -Dexpression=project.version -q -DforceStdout))
+	@$(GENERATOR_CMD) $(GENERATE_ARGS) --additional-properties=artifactVersion=$(CURRENT_VERSION)
 
 build: up
 	@$(MVN_CMD) clean test-compile
@@ -31,6 +31,8 @@ bump: up sync
 ifndef VERSION
 	$(error VERSION is not set)
 endif
+	@$(eval CURRENT_VERSION=$(shell $(MVN_CMD) help:evaluate -Dexpression=project.version -q -DforceStdout))
+	@docker compose exec maven sed -i "s/$(CURRENT_VERSION)/$(VERSION)/g" README.md
 	@$(MVN_CMD) versions:set -DnewVersion=$(VERSION) versions:commit
 	@$(GENERATOR_CMD) $(GENERATE_ARGS) --additional-properties=artifactVersion=$(VERSION)
 
