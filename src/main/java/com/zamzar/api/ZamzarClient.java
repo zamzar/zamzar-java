@@ -23,7 +23,7 @@ public class ZamzarClient {
 
     protected static final String TEST_CREDITS_REMAINING_HEADER = "Zamzar-Test-Credits-Remaining";
 
-    protected static OkHttpClient.Builder getDefaultTransportBuilder() {
+    public static OkHttpClient.Builder getDefaultTransportBuilder() {
         return new OkHttpClient.Builder()
             .callTimeout(HTTP_CALL_TIMEOUT, TimeUnit.MILLISECONDS)
             .connectTimeout(HTTP_CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS)
