@@ -11,6 +11,9 @@ import java.util.stream.Stream;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
 
+/**
+ * An interceptor that retries requests when the server indicates a transient error (i.e., 502 / 503 / 504 response).
+ */
 public class BackOffRetryServerErrors implements Interceptor {
 
     protected static Duration DEFAULT_TIMEOUT = Duration.of(5, MINUTES);

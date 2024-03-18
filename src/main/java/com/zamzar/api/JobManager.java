@@ -18,6 +18,9 @@ import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/**
+ * Provides operations that can be performed on a job running on the Zamzar API servers.
+ */
 public class JobManager extends Awaitable<JobManager> {
 
     protected static List<Job.StatusEnum> TERMINAL_STATUSES = Arrays.asList(
@@ -29,23 +32,35 @@ public class JobManager extends Awaitable<JobManager> {
     protected final ZamzarClient zamzar;
     protected final Job model;
 
-    public JobManager(ZamzarClient zamzar, Job model) {
+    protected JobManager(ZamzarClient zamzar, Job model) {
         this.zamzar = zamzar;
         this.model = model;
     }
 
+    /**
+     * Returns the job's metadata.
+     */
     public Job getModel() {
         return model;
     }
 
+    /**
+     * Returns the job's ID.
+     */
     public Integer getId() {
         return getModel().getId();
     }
 
+    /**
+     * Returns the ID of the source file being converted.
+     */
     public Integer getSourceFileId() {
         return getModel().getSourceFile().getId();
     }
 
+    /**
+     * Returns the IDs of the target files produced by the conversion.
+     */
     public List<Integer> getTargetFileIds() {
         return getTargetFiles()
             .stream()
@@ -54,22 +69,38 @@ public class JobManager extends Awaitable<JobManager> {
             .collect(Collectors.toList());
     }
 
+    /**
+     * Indicates whether the job has completed.
+     */
     public boolean hasCompleted() {
         return TERMINAL_STATUSES.contains(getModel().getStatus());
     }
 
+    /**
+     * Indicates whether the job has successfully completed.
+     */
     public boolean hasSucceeded() {
         return getModel().getStatus() == Job.StatusEnum.SUCCESSFUL;
     }
 
+    /**
+     * If the job has failed, returns the reason for the failure.
+     */
     public Failure getFailure() {
         return getModel().getFailure();
     }
 
+    /**
+     * Performs an API request to determine the current state of the job.
+     */
     public JobManager refresh() throws ApiException {
         return zamzar.jobs().find(getId());
     }
 
+    /**
+     * Downloads all the target files produced by the conversion to the specified destination, blocking until the
+     * download is complete.
+     */
     public JobManager store(File destination) throws ApiException {
         if (getTargetFileIds().isEmpty()) {
             throw new ApiException("No target files to download");
@@ -83,17 +114,26 @@ public class JobManager extends Awaitable<JobManager> {
         return this;
     }
 
+    /**
+     * Immediately deletes the source file and all target files from the Zamzar API servers.
+     */
     public JobManager deleteAllFiles() throws ApiException {
         this.deleteSourceFile();
         this.deleteTargetFiles();
         return this;
     }
 
+    /**
+     * Immediately deletes the source file from the Zamzar API servers.
+     */
     public JobManager deleteSourceFile() throws ApiException {
         zamzar.files().delete(getSourceFileId());
         return this;
     }
 
+    /**
+     * Immediately deletes all target files from the Zamzar API servers.
+     */
     public JobManager deleteTargetFiles() throws ApiException {
         for (int id : getTargetFileIds()) {
             zamzar.files().delete(id);
