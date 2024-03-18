@@ -49,6 +49,6 @@ ifndef GPG_PASSPHRASE
 endif
 	@docker compose exec maven mkdir -p /root/.m2
 	@docker compose exec maven sh -c 'echo "<settings><servers><server><id>central</id><username>$(MVN_CENTRAL_USERNAME)</username><password>$(MVN_CENTRAL_PASSWORD)</password></server></servers></settings>" > /root/.m2/settings.xml'
-	@docker compose exec maven sh -c 'echo "$(GPG_PRIVATE_KEY)" > /root/api-sdks.asc'
+	@docker compose exec maven sh -c 'echo -n "$(GPG_PRIVATE_KEY) | base64 --decode" > /root/api-sdks.asc'
 	@docker compose exec maven gpg --batch --import --pinentry-mode loopback --passphrase "$(GPG_PASSPHRASE)" /root/api-sdks.asc
 	@$(MVN_CMD) deploy -DskipTests -Dgpg.keyname=api-sdks -Dgpg.passphrase=$(GPG_PASSPHRASE)
