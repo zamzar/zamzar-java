@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
 
+/**
+ * An interceptor that retries requests when the server indicates that the client is being rate-limited.
+ */
 public class BackOffRetryWhenRateLimited implements Interceptor {
 
     protected static Duration DEFAULT_TIMEOUT = Duration.of(5, MINUTES);

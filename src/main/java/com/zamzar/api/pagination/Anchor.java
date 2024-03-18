@@ -1,5 +1,10 @@
 package com.zamzar.api.pagination;
 
+/**
+ * Represents a reference to a position in a paginated list of resources.
+ *
+ * @param <T> the type of identifier used for items in the list (e.g., Integer or String)
+ */
 public class Anchor<T> {
 
     protected final T ref;
