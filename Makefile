@@ -27,14 +27,14 @@ build: up
 test: build
 	@$(MVN_CMD) test
 
-bump: up
+bump: up sync
 ifndef VERSION
 	$(error VERSION is not set)
 endif
 	@$(MVN_CMD) versions:set -DnewVersion=$(VERSION) versions:commit
 	@$(GENERATOR_CMD) $(GENERATE_ARGS) --additional-properties=artifactVersion=$(VERSION)
 
-publish:
+publish: up
 ifndef MVN_CENTRAL_USERNAME
 	$(error MVN_CENTRAL_USERNAME is not set)
 endif
