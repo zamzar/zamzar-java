@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.zamzar</groupId>
   <artifactId>zamzar-java</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -55,7 +55,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.zamzar:zamzar-java:0.0.3"
+     implementation "com.zamzar:zamzar-java:0.0.4"
   }
 ```
 
@@ -69,7 +69,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/zamzar-java-0.0.3.jar`
+* `target/zamzar-java-0.0.4.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
