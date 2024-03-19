@@ -2,13 +2,10 @@ package com.zamzar.api;
 
 import com.zamzar.api.pagination.Anchor;
 import com.zamzar.api.pagination.Paged;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -73,14 +70,9 @@ public class ImportsServiceTest extends ZamzarApiTest {
         assertTrue(Files.size(downloaded) > 0, "Expected non-empty file: " + downloaded);
     }
 
-    private void createImports(int count) throws Exception {
-        for (int i = 0; i < count; i++) {
-            zamzar().imports().start("s3://bucket-name/path/to/import-" + i);
-        }
-    }
-
-    @NotNull
-    private static List<Integer> getIdsOfImportsIn(Paged<ImportManager, Integer> page) {
-        return page.getItems().stream().map(ImportManager::getId).collect(Collectors.toList());
+    @Test
+    public void startForUrlWithUnknownFilenameRequiresFilenameParam() {
+        assert422s(() -> zamzar().imports().start("s3://bucket-name/path/to/unknown"));
+        assert200s(() -> zamzar().imports().start("s3://bucket-name/path/to/unknown", "filename.txt"));
     }
 }

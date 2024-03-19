@@ -150,7 +150,20 @@ public class JobBuilder {
         }
 
         public Integer prepare(ZamzarClient zamzar) throws ApiException {
-            return zamzar.imports().start(url.toString()).awaitOrThrow().getImportedFile().getId();
+            final ImportManager _import = zamzar.imports().start(this.url.toString(), this.getFilename(null)).awaitOrThrow();
+            return _import.getImportedFile().getId();
+        }
+
+        protected String getFilename(String extension) {
+            final File file = new File(url.getPath());
+
+            if (file.getName().isEmpty()) {
+                return null;
+            } else if (file.getName().contains(".") || extension == null) {
+                return file.getName();
+            } else {
+                return file.getName() + "." + extension;
+            }
         }
     }
 }
