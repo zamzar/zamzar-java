@@ -1,11 +1,12 @@
 package client;
 
 import com.zamzar.api.ZamzarClient;
+import com.zamzar.api.invoker.ApiException;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 public class Logging {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ApiException {
         // Create an OkHttp logging interceptor
         // see: https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();

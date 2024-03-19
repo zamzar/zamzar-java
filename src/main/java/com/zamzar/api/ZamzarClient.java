@@ -9,8 +9,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Response;
 
 import java.io.File;
+import java.net.URI;
 import java.util.concurrent.TimeUnit;
-import java.util.function.UnaryOperator;
 
 /**
  * The primary entrypoint for making request against the Zamzar API.
@@ -80,7 +80,7 @@ public class ZamzarClient {
      * <p>
      * Create and retrieve your API key from the <a href="https://developers.zamzar.com">Zamzar Developer Portal</a>.
      */
-    public ZamzarClient(String apiKey) {
+    public ZamzarClient(String apiKey) throws ApiException {
         this(apiKey, ZamzarEnvironment.PRODUCTION);
     }
 
@@ -91,7 +91,7 @@ public class ZamzarClient {
      *
      * @param environment the Zamzar API environment to use (production or sandbox)
      */
-    public ZamzarClient(String apiKey, ZamzarEnvironment environment) {
+    public ZamzarClient(String apiKey, ZamzarEnvironment environment) throws ApiException {
         this(apiKey, environment.getBaseUrl());
     }
 
@@ -101,7 +101,7 @@ public class ZamzarClient {
      * You should only use this constructor if you need to override the default base URL for the API (e.g., when
      * testing the Zamzar Java library itself).
      */
-    public ZamzarClient(String apiKey, String baseUrl) {
+    public ZamzarClient(String apiKey, URI baseUrl) {
         this(apiKey, baseUrl, getDefaultTransportBuilder().build());
     }
 
@@ -110,7 +110,7 @@ public class ZamzarClient {
      * <p>
      * Use this constructor if you need to customise the HTTP client used by the client (e.g., to set custom timeouts).
      */
-    public ZamzarClient(String apiKey, OkHttpClient transport) {
+    public ZamzarClient(String apiKey, OkHttpClient transport) throws ApiException {
         this(apiKey, ZamzarEnvironment.PRODUCTION, transport);
     }
 
@@ -119,7 +119,7 @@ public class ZamzarClient {
      * <p>
      * Use this constructor if you need to customise the HTTP client used by the client (e.g., to set custom timeouts).
      */
-    public ZamzarClient(String apiKey, ZamzarEnvironment environment, OkHttpClient transport) {
+    public ZamzarClient(String apiKey, ZamzarEnvironment environment, OkHttpClient transport) throws ApiException {
         this(apiKey, environment.getBaseUrl(), transport);
     }
 
@@ -129,7 +129,7 @@ public class ZamzarClient {
      * You should only use this constructor if you need to override the default base URL for the API (e.g., when
      * testing the Zamzar Java library itself).
      */
-    public ZamzarClient(String apiKey, String baseUrl, OkHttpClient transport) {
+    public ZamzarClient(String apiKey, URI baseUrl, OkHttpClient transport) {
         // Augment the transport to capture the last remaining credits from the response headers
         final OkHttpClient augmentedTransport = prependInterceptor(
             transport,
@@ -143,7 +143,7 @@ public class ZamzarClient {
 
         // Configure the API client
         this.client = new ApiClient(augmentedTransport);
-        this.client.setBasePath(baseUrl);
+        this.client.setBasePath(baseUrl.toString());
         this.client.setUserAgent(USER_AGENT);
         this.client.setBearerToken(apiKey);
 
@@ -193,8 +193,8 @@ public class ZamzarClient {
      *       .deleteAllFiles();
      * </pre>
      */
-    public JobManager convert(File source, String targetFormat, UnaryOperator<JobBuilder> build) throws ApiException {
-        return jobs().create(source, targetFormat, build).awaitOrThrow();
+    public JobManager convert(File source, String targetFormat, JobBuilder.Modifier modifier) throws ApiException {
+        return jobs().create(source, targetFormat, modifier).awaitOrThrow();
     }
 
     /**
@@ -234,8 +234,8 @@ public class ZamzarClient {
      *       .deleteTargetFiles();
      * </pre>
      */
-    public JobManager convert(Integer sourceId, String targetFormat, UnaryOperator<JobBuilder> build) throws ApiException {
-        return jobs().create(sourceId, targetFormat, build).awaitOrThrow();
+    public JobManager convert(Integer sourceId, String targetFormat, JobBuilder.Modifier modifier) throws ApiException {
+        return jobs().create(sourceId, targetFormat, modifier).awaitOrThrow();
     }
 
     /**
@@ -247,14 +247,14 @@ public class ZamzarClient {
      *     ZamzarClient zamzar = new ZamzarClient("YOUR_API_KEY_GOES_HERE");
      *
      *     zamzar
-     *       .convert("https://example.com/source.pdf", "jpg")
+     *       .convert(new URL("https://example.com/source.pdf"), "jpg")
      *       .awaitOrThrow()
      *       .download(new File("path/to/destination.jpg"))
      *       .deleteAllFiles();
      * </pre>
      */
-    public JobManager convert(String sourceUrl, String targetFormat) throws ApiException {
-        return jobs().create(sourceUrl, targetFormat).awaitOrThrow();
+    public JobManager convert(URI source, String targetFormat) throws ApiException {
+        return jobs().create(source, targetFormat).awaitOrThrow();
     }
 
     /**
@@ -275,8 +275,8 @@ public class ZamzarClient {
      *       .deleteAllFiles();
      * </pre>
      */
-    public JobManager convert(String sourceUrl, String targetFormat, UnaryOperator<JobBuilder> build) throws ApiException {
-        return jobs().create(sourceUrl, targetFormat, build).awaitOrThrow();
+    public JobManager convert(URI source, String targetFormat, JobBuilder.Modifier modifier) throws ApiException {
+        return jobs().create(source, targetFormat, modifier).awaitOrThrow();
     }
 
     protected JobManager convert(JobBuilder builder) throws ApiException {

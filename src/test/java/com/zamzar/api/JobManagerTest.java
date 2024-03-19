@@ -10,14 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class JobManagerTest extends ZamzarApiTest {
     @Test
-    public void await() throws ApiException {
+    public void await() throws Exception {
         assertTrue(zamzar().jobs().find(SUCCEEDING_JOB_ID).await().hasSucceeded());
         assertNull(zamzar().jobs().find(SUCCEEDING_JOB_ID).await().getFailure());
         assertTrue(zamzar().jobs().find(SUCCEEDING_JOB_ID).awaitOrThrow().hasSucceeded());
     }
 
     @Test
-    public void awaitFailing() throws ApiException {
+    public void awaitFailing() throws Exception {
         assertTrue(zamzar().jobs().find(FAILING_JOB_ID).await().hasFailed());
         assertNotNull(zamzar().jobs().find(FAILING_JOB_ID).await().getFailure().getCode());
         assertNotNull(zamzar().jobs().find(FAILING_JOB_ID).await().getFailure().getMessage());

@@ -1,12 +1,12 @@
 package jobs;
 
 import com.zamzar.api.ZamzarClient;
-import com.zamzar.api.invoker.ApiException;
 
 import java.io.File;
+import java.net.URI;
 
 public class StartJob {
-    public static void main(String[] args) throws ApiException {
+    public static void main(String[] args) throws Exception {
         ZamzarClient zamzar = new ZamzarClient("YOUR_API_KEY_GOES_HERE");
 
         // Convert a local file, wait for it to complete (or throw an exception if it fails), and download the result
@@ -17,7 +17,7 @@ public class StartJob {
 
         // Convert a remote file, wait for it to complete (or throw an exception if it fails), and download the result
         zamzar
-            .convert("https://www.zamzar.com/images/zamzar-logo.png", "jpg")
+            .convert(new URI("https://www.zamzar.com/images/zamzar-logo.png"), "jpg")
             .awaitOrThrow()
             .store(new File("path/to/your/file.jpg"));
 
@@ -25,7 +25,7 @@ public class StartJob {
         // (requires Connected Services to be configured in the developer dashboard at https://developers.zamzar.com/)
         zamzar
             .convert(
-                "s3://CREDENTIAL_NAME@your-bucket/your-file.docx",
+                new URI("s3://CREDENTIAL_NAME@your-bucket/your-file.docx"),
                 "pdf",
                 job -> job.exportingTo("s3://CREDENTIAL_NAME@your-bucket/your-file.pdf")
             )
@@ -33,7 +33,7 @@ public class StartJob {
 
         // Override the source format (if it's not correctly detected from the URL / filename)
         zamzar
-            .convert("https://www.zamzar.com/images/zamzar-logo", "jpg", job -> job.from("png"))
+            .convert(new URI("https://www.zamzar.com/images/zamzar-logo"), "jpg", job -> job.from("png"))
             .awaitOrThrow()
             .store(new File("path/to/your/file.jpg"));
 

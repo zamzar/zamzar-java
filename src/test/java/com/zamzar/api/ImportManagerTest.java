@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ImportManagerTest extends ZamzarApiTest {
     @Test
-    public void await() throws ApiException {
+    public void await() throws Exception {
         assertTrue(zamzar().imports().find(SUCCEEDING_IMPORT_ID).await().hasSucceeded());
         assertNull(zamzar().imports().find(SUCCEEDING_IMPORT_ID).await().getFailure());
         assertTrue(zamzar().imports().find(SUCCEEDING_IMPORT_ID).awaitOrThrow().hasSucceeded());
     }
 
     @Test
-    public void awaitFailing() throws ApiException {
+    public void awaitFailing() throws Exception {
         assertTrue(zamzar().imports().find(FAILING_IMPORT_ID).await().hasFailed());
         assertNotNull(zamzar().imports().find(FAILING_IMPORT_ID).await().getFailure().getCode());
         assertNotNull(zamzar().imports().find(FAILING_IMPORT_ID).await().getFailure().getMessage());

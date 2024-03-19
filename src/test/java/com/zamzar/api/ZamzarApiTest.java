@@ -9,6 +9,8 @@ import org.junit.jupiter.api.function.Executable;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -94,11 +96,11 @@ public abstract class ZamzarApiTest {
         }
     }
 
-    protected ZamzarClient zamzar() {
+    protected ZamzarClient zamzar() throws URISyntaxException {
         return zamzar(ZamzarClient.getDefaultTransportBuilder().build());
     }
 
-    protected ZamzarClient zamzar(Interceptor interceptor) {
+    protected ZamzarClient zamzar(Interceptor interceptor) throws URISyntaxException {
         return zamzar(ZamzarClient.getDefaultTransportBuilder().addInterceptor(interceptor).build());
     }
 
@@ -120,9 +122,9 @@ public abstract class ZamzarApiTest {
         return Files.list(TEMP_DIR).filter(filter).collect(Collectors.toList());
     }
 
-    protected ZamzarClient zamzar(OkHttpClient transport) {
+    protected ZamzarClient zamzar(OkHttpClient transport) throws URISyntaxException {
         if (zamzar == null) {
-            zamzar = new ZamzarClient(API_KEY, API_URL, transport);
+            zamzar = new ZamzarClient(API_KEY, new URI(API_URL), transport);
         }
         return zamzar;
     }

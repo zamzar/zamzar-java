@@ -3,6 +3,8 @@ package com.zamzar.api;
 import com.zamzar.api.invoker.ApiException;
 
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +19,7 @@ public class JobBuilder {
     protected final Source source;
     protected final String targetFormat;
     protected String sourceFormat;
-    protected String exportUrl;
+    protected URI destination;
     protected Map<String, Object> options = new HashMap<>();
 
     /**
@@ -37,8 +39,8 @@ public class JobBuilder {
     /**
      * Begin to build a conversion job that operates on a file accessible via a URL.
      */
-    public JobBuilder(String sourceUrl, String targetFormat) {
-        this(new RemoteFile(sourceUrl), targetFormat);
+    public JobBuilder(URI source, String targetFormat) {
+        this(new RemoteFile(source), targetFormat);
     }
 
     protected JobBuilder(Source source, String targetFormat) {
@@ -66,8 +68,20 @@ public class JobBuilder {
     /**
      * After converting the file, export the results to the specified URL.
      */
-    public JobBuilder exportingTo(String exportUrl) {
-        this.exportUrl = exportUrl;
+    public JobBuilder exportingTo(String destination) throws ApiException {
+        try {
+            this.destination = new URI(destination);
+            return this;
+        } catch (URISyntaxException e) {
+            throw new ApiException(e);
+        }
+    }
+
+    /**
+     * After converting the file, export the results to the specified URL.
+     */
+    public JobBuilder exportingTo(URI destination) {
+        this.destination = destination;
         return this;
     }
 
@@ -83,16 +97,25 @@ public class JobBuilder {
         return sourceFormat;
     }
 
-    protected String getExportUrl() {
-        return exportUrl;
+    protected URI getDestination() {
+        return destination;
     }
 
     protected Map<String, Object> getOptions() {
         return options;
     }
 
+    @FunctionalInterface
+    public interface Modifier {
+        static Modifier identity() {
+            return (builder) -> builder;
+        }
+
+        JobBuilder modify(JobBuilder jobBuilder) throws ApiException;
+    }
+
     protected interface Source {
-        Integer prepare(ZamzarClient client) throws ApiException;
+        Integer prepare(ZamzarClient zamzar) throws ApiException;
     }
 
     protected static class LocalFile implements Source {
@@ -102,8 +125,8 @@ public class JobBuilder {
             this.file = file;
         }
 
-        public Integer prepare(ZamzarClient client) throws ApiException {
-            return client.upload(file).getId();
+        public Integer prepare(ZamzarClient zamzar) throws ApiException {
+            return zamzar.upload(file).getId();
         }
     }
 
@@ -114,20 +137,20 @@ public class JobBuilder {
             this.id = id;
         }
 
-        public Integer prepare(ZamzarClient client) {
+        public Integer prepare(ZamzarClient zamzar) {
             return id;
         }
     }
 
     protected static class RemoteFile implements Source {
-        protected final String url;
+        protected final URI url;
 
-        protected RemoteFile(String url) {
+        protected RemoteFile(URI url) {
             this.url = url;
         }
 
         public Integer prepare(ZamzarClient zamzar) throws ApiException {
-            return zamzar.imports().start(url).awaitOrThrow().getImportedFile().getId();
+            return zamzar.imports().start(url.toString()).awaitOrThrow().getImportedFile().getId();
         }
     }
 }
