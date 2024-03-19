@@ -1,6 +1,5 @@
 package com.zamzar.api;
 
-import com.zamzar.api.invoker.ApiException;
 import com.zamzar.api.pagination.Anchor;
 import com.zamzar.api.pagination.Paged;
 import org.jetbrains.annotations.NotNull;
@@ -16,14 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ImportsServiceTest extends ZamzarApiTest {
     @Test
-    public void find() throws ApiException {
+    public void find() throws Exception {
         final ImportManager _import = zamzar().imports().find(SUCCEEDING_IMPORT_ID);
 
         assertEquals(SUCCEEDING_IMPORT_ID, _import.getId());
     }
 
     @Test
-    public void list() throws ApiException {
+    public void list() throws Exception {
         final Paged<ImportManager, Integer> imports = zamzar().imports().list();
 
         for (ImportManager _import : imports.getItems()) {
@@ -32,7 +31,7 @@ public class ImportsServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void listAndPageForwards() throws ApiException {
+    public void listAndPageForwards() throws Exception {
         // There are at least 3 imports in the mock server
         // We'll therefore navigate 2 items at a time, and can expect at least 2 pages
         int numberOfPages = 0;
@@ -46,7 +45,7 @@ public class ImportsServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void listAndPageBackwards() throws ApiException {
+    public void listAndPageBackwards() throws Exception {
         // There are at least 3 imports in the mock server, and using an anchor reduces that to at least 2 imports
         // We'll therefore navigate 1 item at a time, and can expect at least 2 pages
         int numberOfPages = 0;
@@ -74,7 +73,7 @@ public class ImportsServiceTest extends ZamzarApiTest {
         assertTrue(Files.size(downloaded) > 0, "Expected non-empty file: " + downloaded);
     }
 
-    private void createImports(int count) throws ApiException {
+    private void createImports(int count) throws Exception {
         for (int i = 0; i < count; i++) {
             zamzar().imports().start("s3://bucket-name/path/to/import-" + i);
         }

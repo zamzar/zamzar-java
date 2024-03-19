@@ -1,6 +1,5 @@
 package com.zamzar.api;
 
-import com.zamzar.api.invoker.ApiException;
 import com.zamzar.api.pagination.Anchor;
 import com.zamzar.api.pagination.Paged;
 import org.jetbrains.annotations.NotNull;
@@ -17,13 +16,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FilesServiceTest extends ZamzarApiTest {
     @Test
-    public void find() throws ApiException {
+    public void find() throws Exception {
         final FileManager file = zamzar().files().find(FILE_ID);
         assertEquals(FILE_ID, file.getId());
     }
 
     @Test
-    public void list() throws ApiException {
+    public void list() throws Exception {
         final Paged<FileManager, Integer> files = zamzar().files().list();
         for (FileManager file : files.getItems()) {
             assertTrue(file.getId() > 0);
@@ -31,7 +30,7 @@ public class FilesServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void listAndPageForwards() throws ApiException {
+    public void listAndPageForwards() throws Exception {
         // Note the zamzar-mock provides at least 7 precanned files
         // See: https://github.com/zamzar/zamzar-mock/blob/main/README.md
 
@@ -49,7 +48,7 @@ public class FilesServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void listAndPageBackwards() throws ApiException {
+    public void listAndPageBackwards() throws Exception {
         // Note the zamzar-mock provides at least 7 precanned files
         // See: https://github.com/zamzar/zamzar-mock/blob/main/README.md
 
@@ -67,7 +66,7 @@ public class FilesServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void delete() throws ApiException {
+    public void delete() throws Exception {
         final FileManager file = zamzar().files().delete(FILE_ID);
         assertEquals(FILE_ID, file.getId());
         assert404s(() -> zamzar().files().find(FILE_ID));

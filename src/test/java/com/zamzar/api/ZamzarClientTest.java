@@ -104,14 +104,14 @@ public class ZamzarClientTest extends ZamzarApiTest {
     }
 
     @Test
-    public void hasUserAgent() throws ApiException {
+    public void hasUserAgent() throws Exception {
         final SpyingInterceptor spy = new SpyingInterceptor();
         zamzar(spy).account().get();
         spy.assertRequestHasHeader("User-Agent", ZamzarClient.USER_AGENT);
     }
 
     @Test
-    public void hasTimeouts() {
+    public void hasTimeouts() throws Exception {
         final OkHttpClient transport = zamzar().client.getHttpClient();
 
         assertEquals(ZamzarClient.HTTP_CALL_TIMEOUT, transport.callTimeoutMillis());
@@ -121,7 +121,7 @@ public class ZamzarClientTest extends ZamzarApiTest {
     }
 
     @Test
-    public void retriesOnServerErrors() throws ApiException {
+    public void retriesOnServerErrors() throws Exception {
         final Interceptor downForTwoRequests = new Interceptor() {
             private int count = 0;
 
@@ -148,7 +148,7 @@ public class ZamzarClientTest extends ZamzarApiTest {
     }
 
     @Test
-    public void retriesWhenRateLimited() throws ApiException {
+    public void retriesWhenRateLimited() throws Exception {
         final Interceptor rateLimitedForTwoRequests = new Interceptor() {
             private int count = 0;
 
@@ -176,7 +176,7 @@ public class ZamzarClientTest extends ZamzarApiTest {
     }
 
     @Test
-    public void capturesLatestCreditUsage() throws ApiException {
+    public void capturesLatestCreditUsage() throws Exception {
         final Interceptor alterCreditUsage = chain -> {
             Response originalResponse = chain.proceed(chain.request());
             return originalResponse.newBuilder()

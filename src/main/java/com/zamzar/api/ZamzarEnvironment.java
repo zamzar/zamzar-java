@@ -1,5 +1,10 @@
 package com.zamzar.api;
 
+import com.zamzar.api.invoker.ApiException;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  * The set of environments available for the Zamzar API.
  *
@@ -22,7 +27,11 @@ public enum ZamzarEnvironment {
         this.url = url;
     }
 
-    public String getBaseUrl() {
-        return url;
+    public URI getBaseUrl() throws ApiException {
+        try {
+            return new URI(url);
+        } catch (URISyntaxException e) {
+            throw new ApiException(e);
+        }
     }
 }

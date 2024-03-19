@@ -7,6 +7,7 @@ import com.zamzar.api.pagination.Paged;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
+import java.net.URI;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,7 +23,7 @@ public class JobsServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void list() throws ApiException {
+    public void list() throws Exception {
         final Paged<JobManager, Integer> jobs = zamzar().jobs().list();
 
         for (JobManager job : jobs.getItems()) {
@@ -31,7 +32,7 @@ public class JobsServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void listAndPageForwards() throws ApiException {
+    public void listAndPageForwards() throws Exception {
         // There are at least 3 jobs in the mock server
         // We'll therefore navigate 2 items at a time, and can expect at least 2 pages
         int numberOfPages = 0;
@@ -45,7 +46,7 @@ public class JobsServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void listAndPageBackwards() throws ApiException {
+    public void listAndPageBackwards() throws Exception {
         // There are at least 3 jobs in the mock server, and using an anchor reduces that to at least 2 jobs
         // We'll therefore navigate 1 item at a time, and can expect at least 2 pages
         int numberOfPages = 0;
@@ -97,7 +98,7 @@ public class JobsServiceTest extends ZamzarApiTest {
     public void createFromUrl() throws Exception {
         final JobManager job = zamzar()
             .jobs()
-            .create("https://www.example.com/logo.png", "jpg");
+            .create(new URI("https://www.example.com/logo.png"), "jpg");
 
         // Check that a non-empty file has been downloaded
         assertTrue(job.getId() > 0);
@@ -112,7 +113,7 @@ public class JobsServiceTest extends ZamzarApiTest {
     }
 
     @Test
-    public void cancel() throws ApiException {
+    public void cancel() throws Exception {
         final JobManager job = zamzar().jobs().cancel(SUCCEEDING_JOB_ID);
 
         assertEquals(SUCCEEDING_JOB_ID, job.getId());
