@@ -10,6 +10,7 @@ public class UploadFile {
         ZamzarClient zamzar = new ZamzarClient("YOUR_API_KEY_GOES_HERE");
 
         // Upload a file to the Zamzar API
-        zamzar.upload(new File("path/to/your/file.docx"));
+        int id = zamzar.upload(new File("path/to/your/file.docx")).getId();
+        System.out.println("File ID: " + id);
     }
 }
