@@ -1,6 +1,7 @@
 package com.zamzar.api;
 
 import com.zamzar.api.invoker.ApiException;
+import com.zamzar.api.model.Export;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
@@ -14,6 +15,21 @@ public class JobManagerTest extends ZamzarApiTest {
         assertTrue(zamzar().jobs().find(SUCCEEDING_JOB_ID).await().hasSucceeded());
         assertNull(zamzar().jobs().find(SUCCEEDING_JOB_ID).await().getFailure());
         assertTrue(zamzar().jobs().find(SUCCEEDING_JOB_ID).awaitOrThrow().hasSucceeded());
+    }
+
+    @Test
+    public void awaitRespectsExports() throws Exception {
+        final JobManager finishedJobWithExports = zamzar().jobs().find(SUCCEEDING_MULTI_OUTPUT_JOB_ID).await();
+
+        // sanity check -- there should be at least 1 export
+        assertFalse(finishedJobWithExports.getModel().getExports().isEmpty());
+
+        for (Export export : finishedJobWithExports.getModel().getExports()) {
+            assertTrue(
+                export.getStatus() == Export.StatusEnum.SUCCESSFUL || export.getStatus() == Export.StatusEnum.FAILED,
+                "Export " + export.getId() + " should have completed, but is: " + export.getStatus()
+            );
+        }
     }
 
     @Test
