@@ -2,6 +2,7 @@ package com.zamzar.api;
 
 import com.zamzar.api.internal.Awaitable;
 import com.zamzar.api.invoker.ApiException;
+import com.zamzar.api.model.Export;
 import com.zamzar.api.model.Failure;
 import com.zamzar.api.model.Job;
 import com.zamzar.api.model.ModelFile;
@@ -27,6 +28,11 @@ public class JobManager extends Awaitable<JobManager> {
         Job.StatusEnum.SUCCESSFUL,
         Job.StatusEnum.FAILED,
         Job.StatusEnum.CANCELLED
+    );
+
+    protected static List<Export.StatusEnum> TERMINAL_EXPORT_STATUSES = Arrays.asList(
+        Export.StatusEnum.SUCCESSFUL,
+        Export.StatusEnum.FAILED
     );
 
     protected final ZamzarClient zamzar;
@@ -73,7 +79,7 @@ public class JobManager extends Awaitable<JobManager> {
      * Indicates whether the job has completed.
      */
     public boolean hasCompleted() {
-        return TERMINAL_STATUSES.contains(getModel().getStatus());
+        return jobHasCompleted() && allExportsHaveCompleted();
     }
 
     /**
@@ -204,5 +210,24 @@ public class JobManager extends Awaitable<JobManager> {
 
     protected List<ModelFile> getTargetFiles() {
         return getModel().getTargetFiles();
+    }
+
+    protected boolean jobHasCompleted() {
+        return TERMINAL_STATUSES.contains(getModel().getStatus());
+    }
+
+    protected boolean allExportsHaveCompleted() {
+        // If there's no export URL, no exports have been requested => they are all complete
+        if (getModel().getExportUrl() == null || getModel().getExportUrl().isEmpty()) {
+            return true;
+        }
+
+        // If we're expecting exports but none have been created => they are not yet complete
+        if (getModel().getExports() == null || getModel().getExports().isEmpty()) {
+            return false;
+        }
+
+        // Return true if and only if all exports have completed
+        return getModel().getExports().stream().allMatch(e -> TERMINAL_EXPORT_STATUSES.contains(e.getStatus()));
     }
 }
