@@ -13,7 +13,6 @@ Jump to:
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [Resources](#resources)
 
 ## Requirements
@@ -104,16 +103,6 @@ OkHttpClient customHttpClient = new OkHttpClient.Builder()
     .build();
 ZamzarClient client = new ZamzarClient("YOUR_API_KEY_GOES_HERE", customTransport);
 ```
-
-## Contributing
-
-We would greatly value feedback and contributions from our community.
-
-To run tests:
-
-- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-
-- Run `make test`
 
 ## Resources
 
