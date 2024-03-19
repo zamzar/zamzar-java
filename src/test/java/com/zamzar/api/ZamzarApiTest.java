@@ -137,8 +137,17 @@ public abstract class ZamzarApiTest {
         assertTrue(file.toFile().length() > 0, "Expected non-empty file: " + file);
     }
 
+    protected static void assert200s(Executable e) {
+        assertDoesNotThrow(e);
+    }
+
     protected static void assert404s(Executable e) {
         final ApiException ex = assertThrows(ApiException.class, e);
         assertEquals(404, ex.getCode());
+    }
+
+    protected static void assert422s(Executable e) {
+        final ApiException ex = assertThrows(ApiException.class, e);
+        assertEquals(422, ex.getCode());
     }
 }

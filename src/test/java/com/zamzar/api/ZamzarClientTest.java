@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -91,6 +92,25 @@ public class ZamzarClientTest extends ZamzarApiTest {
         for (Integer targetFileId : job.getTargetFileIds()) {
             assert404s(() -> zamzar().files().find(targetFileId));
         }
+    }
+
+    @Test
+    public void convertUrlWithSourceFormat() throws Exception {
+        final Path output = createTempFile("output");
+
+        assertEmptyFile(output);
+
+        final JobManager job = zamzar()
+            .convert(
+                // URLs containing "unknown" cause a 422 from the mock if filename (i.e., source format) is not supplied
+                new URI("https://example.org/unknown"),
+                "txt",
+                builder -> builder.from("pdf")
+            );
+
+        // Now download the converted file
+        job.store(output.toFile());
+        assertNonEmptyFile(output);
     }
 
     @Test
