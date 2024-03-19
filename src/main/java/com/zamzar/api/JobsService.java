@@ -100,7 +100,7 @@ public class JobsService implements Listable<JobManager, Integer> {
     }
 
     protected JobManager create(JobBuilder builder) throws ApiException {
-        final Integer sourceId = builder.getSource().prepare(zamzar);
+        final Integer sourceId = builder.prepareSource(zamzar);
         final String targetFormat = builder.getTargetFormat();
         final String sourceFormat = builder.getSourceFormat();
         final String exportUrl = builder.getDestination() == null ? null : builder.getDestination().toString();
