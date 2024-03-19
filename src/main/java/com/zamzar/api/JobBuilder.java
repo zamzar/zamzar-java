@@ -85,8 +85,8 @@ public class JobBuilder {
         return this;
     }
 
-    protected Source getSource() {
-        return source;
+    protected Integer prepareSource(ZamzarClient zamzar) throws ApiException {
+        return source.prepare(this, zamzar);
     }
 
     protected String getTargetFormat() {
@@ -115,7 +115,7 @@ public class JobBuilder {
     }
 
     protected interface Source {
-        Integer prepare(ZamzarClient zamzar) throws ApiException;
+        Integer prepare(JobBuilder builder, ZamzarClient zamzar) throws ApiException;
     }
 
     protected static class LocalFile implements Source {
@@ -125,7 +125,7 @@ public class JobBuilder {
             this.file = file;
         }
 
-        public Integer prepare(ZamzarClient zamzar) throws ApiException {
+        public Integer prepare(JobBuilder builder, ZamzarClient zamzar) throws ApiException {
             return zamzar.upload(file).getId();
         }
     }
@@ -137,7 +137,7 @@ public class JobBuilder {
             this.id = id;
         }
 
-        public Integer prepare(ZamzarClient zamzar) {
+        public Integer prepare(JobBuilder builder, ZamzarClient zamzar) {
             return id;
         }
     }
@@ -149,18 +149,22 @@ public class JobBuilder {
             this.url = url;
         }
 
-        public Integer prepare(ZamzarClient zamzar) throws ApiException {
-            final ImportManager _import = zamzar.imports().start(this.url.toString(), this.getFilename(null)).awaitOrThrow();
+        public Integer prepare(JobBuilder builder, ZamzarClient zamzar) throws ApiException {
+            final String url = this.url.toString();
+            final String filename = this.getFilename(builder.getSourceFormat());
+            final ImportManager _import = zamzar.imports().start(url, filename).awaitOrThrow();
             return _import.getImportedFile().getId();
         }
 
-        protected String getFilename(String extension) {
+        protected String getFilename(String extension) throws ApiException {
             final File file = new File(url.getPath());
 
             if (file.getName().isEmpty()) {
-                return null;
-            } else if (file.getName().contains(".") || extension == null) {
+                throw new ApiException("Could not infer filename from URL (" + url + "). Provide a URL that contains a path.");
+            } else if (file.getName().contains(".")) {
                 return file.getName();
+            } else if (extension == null || extension.isEmpty()) {
+                throw new ApiException("Could not infer filename from URL (" + url + "). Provide an extension to disambiguate.");
             } else {
                 return file.getName() + "." + extension;
             }
