@@ -28,7 +28,7 @@ public abstract class Awaitable<SELF extends Awaitable<SELF>> {
         Duration.ofMillis(200),
         Duration.ofMillis(500),
         Duration.ofMillis(1000),
-        Duration.ofSeconds(1500),
+        Duration.ofMillis(1500),
         Duration.ofSeconds(2),
         Duration.ofSeconds(5),
         Duration.ofSeconds(10),
@@ -36,6 +36,8 @@ public abstract class Awaitable<SELF extends Awaitable<SELF>> {
         Duration.ofSeconds(30),
         Duration.ofSeconds(60)
     );
+
+    protected static final Sleeper DEFAULT_SLEEPER = Thread::sleep;
 
     /**
      * Waits for the operation to succeed, and throws an exception if it fails.
@@ -63,7 +65,7 @@ public abstract class Awaitable<SELF extends Awaitable<SELF>> {
      *                a list of increasing durations for exponential backoff
      */
     public SELF awaitOrThrow(Duration timeout, List<Duration> backoff) throws ApiException {
-        final SELF result = await(timeout, backoff);
+        final SELF result = await(timeout, backoff, DEFAULT_SLEEPER);
         if (hasFailed()) {
             throw new ApiException("Waited for completion but failed");
         }
@@ -84,7 +86,7 @@ public abstract class Awaitable<SELF extends Awaitable<SELF>> {
      *                backoff duration
      */
     public SELF await(Duration timeout) throws ApiException {
-        return await(timeout, DEFAULT_BACKOFF);
+        return await(timeout, DEFAULT_BACKOFF, DEFAULT_SLEEPER);
     }
 
     /**
@@ -96,15 +98,19 @@ public abstract class Awaitable<SELF extends Awaitable<SELF>> {
      *                a list of increasing durations for exponential backoff
      */
     public SELF await(Duration timeout, List<Duration> backoff) throws ApiException {
+        return await(timeout, backoff, DEFAULT_SLEEPER);
+    }
+
+    protected SELF await(Duration timeout, List<Duration> backoff, Sleeper sleeper) throws ApiException {
         final LocalDateTime deadline = LocalDateTime.now().plus(timeout);
 
         SELF current = self();
-        int attempt = 1;
+        int attempt = 0;
 
         while (!current.hasCompleted()) {
             try {
-                long wait = backoff.get(Math.min(attempt, backoff.size() - 1)).toMillis();
-                Thread.sleep(wait);
+                long wait = backoff.get(Math.min(attempt++, backoff.size() - 1)).toMillis();
+                sleeper.sleep(wait);
             } catch (InterruptedException e) {
                 throw new ApiException(e);
             }
@@ -137,5 +143,10 @@ public abstract class Awaitable<SELF extends Awaitable<SELF>> {
     @SuppressWarnings("unchecked")
     protected SELF self() {
         return (SELF) this;
+    }
+
+    @FunctionalInterface
+    protected interface Sleeper {
+        void sleep(long millis) throws InterruptedException;
     }
 }
