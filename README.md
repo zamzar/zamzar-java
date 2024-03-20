@@ -65,15 +65,14 @@ public class GettingStarted {
         // Converts /tmp/example.docx to /tmp/example.pdf
         client
             .convert(new File("/tmp/example.docx"), "pdf") // uploads and converts your file
-            .awaitOrThrow() // waits for completion, throwing an exception on failure
             .store(new File("/tmp/example.zip")) // downloads the converted file
             .deleteAllFiles(); // removes your files (example.docx and example.pdf) from Zamzar's servers
     }
 }
 ```
 
-See the [examples](https://github.com/zamzar/zamzar-java/tree/main/examples) to learn more about how to use the Zamzar
-Java library.
+See the [examples](https://github.com/zamzar/zamzar-java/tree/main/src/test/java/com/zamzar/api/examples) to learn more
+about how to use the Zamzar Java library.
 
 ### Logging
 
@@ -106,8 +105,8 @@ ZamzarClient client = new ZamzarClient("YOUR_API_KEY_GOES_HERE", customTransport
 
 ## Resources
 
-[Code Samples](https://github.com/zamzar/zamzar-java/tree/main/examples) - Copy/Paste from examples which demonstrate
-all key areas of functionality.
+[Code Samples](https://github.com/zamzar/zamzar-java/tree/main/src/test/java/com/zamzar/api/examples) - Copy/Paste from
+examples which demonstrate all key areas of functionality.
 
 [Developer Docs](https://developers.zamzar.com/docs) - For more information about API operations, parameters, and
 responses. Use this if you need additional context on all areas of functionality.

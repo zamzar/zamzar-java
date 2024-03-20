@@ -1,4 +1,4 @@
-package imports;
+package com.zamzar.api.examples.imports;
 
 import com.zamzar.api.ImportManager;
 import com.zamzar.api.ZamzarClient;

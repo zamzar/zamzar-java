@@ -1,4 +1,4 @@
-package client;
+package com.zamzar.api.examples.client;
 
 import com.zamzar.api.ZamzarClient;
 import com.zamzar.api.invoker.ApiException;

@@ -1,4 +1,4 @@
-package jobs;
+package com.zamzar.api.examples.jobs;
 
 import com.zamzar.api.ZamzarClient;
 
