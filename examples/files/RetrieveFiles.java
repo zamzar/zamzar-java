@@ -15,12 +15,12 @@ public class RetrieveFiles {
         ModelFile file = zamzar.files().find(123456).getModel();
         System.out.println("File ID: " + file.getId() + " was created at " + file.getCreatedAt());
 
-        // List all files
+        // List files (returns at most 50 files at a time)
         for (FileManager fileManager : zamzar.files().list().getItems()) {
             System.out.println("File ID: " + fileManager.getModel().getId() + " was created at " + fileManager.getModel().getCreatedAt());
         }
 
-        // List will return at most 50 files at a time; to paginate:
+        // To page through all formats, use the nextPage method:
         Paged<FileManager, Integer> currentPage = zamzar.files().list();
         do {
             for (FileManager fileManager : currentPage.getItems()) {

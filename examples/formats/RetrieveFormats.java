@@ -16,12 +16,12 @@ public class RetrieveFormats {
             .getTargets()
             .forEach(t -> System.out.println(" - " + t.getName() + " (" + t.getCreditCost() + " credits)"));
 
-        // List all formats
+        // List formats (returns at most 50 formats at a time)
         for (Format format : zamzar.formats().list().getItems()) {
             System.out.println(format.getName());
         }
 
-        // List will return at most 50 formats at a time; to paginate:
+        // To page through all formats, use the nextPage method:
         Paged<Format, String> currentPage = zamzar.formats().list();
         do {
             for (Format format : currentPage.getItems()) {

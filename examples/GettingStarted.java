@@ -11,7 +11,6 @@ public class GettingStarted {
         // Converts /tmp/example.docx to /tmp/example.pdf
         zamzar
             .convert(new File("/tmp/example.docx"), "pdf") // uploads and converts your file
-            .awaitOrThrow() // waits for completion, throwing an exception on failure
             .store(new File("/tmp/example.zip")) // downloads the converted file
             .deleteAllFiles(); // removes your files (example.docx and example.pdf) from Zamzar's servers
     }

@@ -12,7 +12,6 @@ public class ConvertExistingFile {
         // Converts a file that is already present on Zamzar's servers to PDF, waits for completion, and downloads PDF
         zamzar
             .convert(123456, "pdf")
-            .awaitOrThrow()
             .store(new File("path/to/your/file.pdf"));
     }
 }
