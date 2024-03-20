@@ -77,7 +77,9 @@ about how to use the Zamzar Java library.
 ### Logging
 
 By default, the Zamzar Java library does not log HTTP requests and responses. To enable logging, configure a
-[LoggingInterceptor](https://square.github.io/okhttp/5.x/logging-interceptor/okhttp3.logging/-http-logging-interceptor/index.html).
+[LoggingInterceptor](https://square.github.io/okhttp/5.x/logging-interceptor/okhttp3.logging/-http-logging-interceptor/index.html);
+such as in
+[this example](https://github.com/zamzar/zamzar-java/blob/e842490d1e4c2aba7d7e7c49f967c7ecb8a90062/src/test/java/com/zamzar/api/examples/client/Logging.java).
 
 ### Configuring timeouts and retries
 
