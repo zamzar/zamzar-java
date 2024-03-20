@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.zamzar</groupId>
     <artifactId>zamzar-java</artifactId>
-    <version>0.0.9</version>
+    <version>0.0.10</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-implementation "com.zamzar:zamzar-java:0.0.9"
+implementation "com.zamzar:zamzar-java:0.0.10"
 ```
 
 ## Usage
