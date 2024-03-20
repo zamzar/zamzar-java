@@ -104,6 +104,13 @@ public abstract class ZamzarApiTest {
         return zamzar(ZamzarClient.getDefaultTransportBuilder().addInterceptor(interceptor).build());
     }
 
+    protected ZamzarClient zamzar(OkHttpClient transport) throws URISyntaxException {
+        if (zamzar == null) {
+            zamzar = new ZamzarClient(API_KEY, new URI(API_URL), transport);
+        }
+        return zamzar;
+    }
+
     protected Path createTempFile(String id) throws IOException {
         final String testClassName = getClass().getSimpleName();
         final String testMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
@@ -120,13 +127,6 @@ public abstract class ZamzarApiTest {
 
     protected List<Path> findTempFiles(Predicate<? super Path> filter) throws IOException {
         return Files.list(TEMP_DIR).filter(filter).collect(Collectors.toList());
-    }
-
-    protected ZamzarClient zamzar(OkHttpClient transport) throws URISyntaxException {
-        if (zamzar == null) {
-            zamzar = new ZamzarClient(API_KEY, new URI(API_URL), transport);
-        }
-        return zamzar;
     }
 
     protected static void assertEmptyFile(Path file) {
