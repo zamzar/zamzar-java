@@ -15,12 +15,12 @@ public class RetrieveImports {
         ModelImport _import = zamzar.imports().find(123456).getModel();
         System.out.println("Import ID: " + _import.getId() + " was created at " + _import.getCreatedAt());
 
-        // List all imports
+        // List imports (returns at most 50 imports at a time)
         for (ImportManager importManager : zamzar.imports().list().getItems()) {
             System.out.println("Import ID: " + importManager.getModel().getId() + " was created at " + importManager.getModel().getCreatedAt());
         }
 
-        // List will return at most 50 imports at a time; to paginate:
+        // To page through all imports, use the nextPage method:
         Paged<ImportManager, Integer> currentPage = zamzar.imports().list();
         do {
             for (ImportManager importManager : currentPage.getItems()) {

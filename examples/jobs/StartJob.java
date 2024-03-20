@@ -12,13 +12,11 @@ public class StartJob {
         // Convert a local file, wait for it to complete (or throw an exception if it fails), and download the result
         zamzar
             .convert(new File("path/to/your/file.docx"), "pdf")
-            .awaitOrThrow()
             .store(new File("path/to/your/file.pdf"));
 
         // Convert a remote file, wait for it to complete (or throw an exception if it fails), and download the result
         zamzar
             .convert(new URI("https://www.zamzar.com/images/zamzar-logo.png"), "jpg")
-            .awaitOrThrow()
             .store(new File("path/to/your/file.jpg"));
 
         // Convert a file in an S3 bucket, wait for it to complete (or throw an exception if it fails), and upload the result to S3
@@ -28,19 +26,16 @@ public class StartJob {
                 new URI("s3://CREDENTIAL_NAME@your-bucket/your-file.docx"),
                 "pdf",
                 job -> job.exportingTo("s3://CREDENTIAL_NAME@your-bucket/your-file.pdf")
-            )
-            .awaitOrThrow();
+            );
 
         // Override the source format (if it's not correctly detected from the URL / filename)
         zamzar
-            .convert(new URI("https://www.zamzar.com/images/zamzar-logo"), "jpg", job -> job.from("png"))
-            .awaitOrThrow()
+            .convert(new URI("https://www.example.com/example-logo"), "jpg", job -> job.from("png"))
             .store(new File("path/to/your/file.jpg"));
 
         // Specify conversion options
         zamzar
             .convert(new File("path/to/your/file.txt"), "mp3", job -> job.option("voice", "en.female"))
-            .awaitOrThrow()
             .store(new File("path/to/your/file.mp3"));
 
         // Check why a job failed

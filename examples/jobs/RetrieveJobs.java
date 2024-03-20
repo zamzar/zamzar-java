@@ -15,12 +15,12 @@ public class RetrieveJobs {
         Job job = zamzar.jobs().find(123456).getModel();
         System.out.println("Job ID: " + job.getId() + " was created at " + job.getCreatedAt());
 
-        // List all jobs
+        // List jobs (returns at most 50 jobs at a time)
         for (JobManager jobManager : zamzar.jobs().list().getItems()) {
             System.out.println("Job ID: " + jobManager.getModel().getId() + " was created at " + jobManager.getModel().getCreatedAt());
         }
 
-        // List will return at most 50 jobs at a time; to paginate:
+        // To page through all jobs, use the nextPage method:
         Paged<JobManager, Integer> currentPage = zamzar.jobs().list();
         do {
             for (JobManager jobManager : currentPage.getItems()) {
