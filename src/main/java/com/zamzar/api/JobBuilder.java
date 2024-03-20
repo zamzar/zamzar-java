@@ -70,8 +70,7 @@ public class JobBuilder {
      */
     public JobBuilder exportingTo(String destination) throws ApiException {
         try {
-            this.destination = new URI(destination);
-            return this;
+            return this.exportingTo(new URI(destination));
         } catch (URISyntaxException e) {
             throw new ApiException(e);
         }
