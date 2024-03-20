@@ -1,4 +1,4 @@
-package formats;
+package com.zamzar.api.examples.formats;
 
 import com.zamzar.api.ZamzarClient;
 import com.zamzar.api.invoker.ApiException;

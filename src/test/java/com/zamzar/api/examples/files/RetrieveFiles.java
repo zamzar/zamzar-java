@@ -1,4 +1,4 @@
-package files;
+package com.zamzar.api.examples.files;
 
 import com.zamzar.api.FileManager;
 import com.zamzar.api.ZamzarClient;
