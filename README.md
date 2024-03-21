@@ -4,9 +4,9 @@
 ![Maven Central Version](https://img.shields.io/maven-central/v/com.zamzar/zamzar-java)
 [![GitHub License](https://img.shields.io/github/license/zamzar/zamzar-mock)](https://github.com/zamzar/zamzar-mock/blob/main/LICENSE)
 
-The Zamzar Java library provides convenient access to the Zamzar API from applications written in the Java language.
-It includes a pre-defined set of classes which make it easy to submit files for conversion, retrieve converted files
-and utilise all of the features that the API offers.
+The official Java SDK for the [Zamzar API](https://developers.zamzar.com).
+
+`zamzar-java` makes it easy to convert files between different formats as part of your Java applications.
 
 Jump to:
 
