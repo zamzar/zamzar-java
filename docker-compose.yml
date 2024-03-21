@@ -13,7 +13,7 @@ services:
     entrypoint: [ "/bin/sh", "-c", "sleep infinity" ]
     environment:
       - API_KEY=GiVUYsF4A8ssq93FR48H
-      - API_URL=http://mock:8080
+      - API_URL=http://mock:8080/v1
     volumes:
       - '.:/usr/src/zamzar-java'
     working_dir: '/usr/src/zamzar-java'

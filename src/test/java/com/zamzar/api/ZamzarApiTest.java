@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public abstract class ZamzarApiTest {
 
-    protected static final String API_URL = Optional.ofNullable(System.getenv("API_URL")).orElse("http://localhost:8080");
+    protected static final String API_URL = Optional.ofNullable(System.getenv("API_URL")).orElse("http://localhost:8080/v1");
 
     protected static final String API_KEY = Optional.ofNullable(System.getenv("API_KEY")).orElse("GiVUYsF4A8ssq93FR48H");
 
@@ -65,8 +65,14 @@ public abstract class ZamzarApiTest {
     public void resetZamzarMock() throws IOException {
         // Construct the URL for to reset the mock
         // See: https://github.com/zamzar/zamzar-mock/blob/main/README.md
-        final URL url = new URL(API_URL + "/__admin/scenarios/reset");
-        final HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        final URL baseUrl = new URL(API_URL);
+        final URL resetUrl = new URL(
+            baseUrl.getProtocol(),
+            baseUrl.getHost(),
+            baseUrl.getPort(),
+            "/__admin/scenarios/reset"
+        );
+        final HttpURLConnection httpURLConnection = (HttpURLConnection) resetUrl.openConnection();
 
         httpURLConnection.setRequestMethod("POST");
         httpURLConnection.setRequestProperty("Authorization", "Bearer " + API_KEY);
