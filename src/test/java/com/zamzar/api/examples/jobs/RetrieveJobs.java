@@ -32,5 +32,10 @@ public class RetrieveJobs {
         // For fine-grained control over pagination, use an anchor and a limit
         // For example, retrieve the 20 jobs immediately after job ID 123456
         Paged<JobManager, Integer> targetedPage = zamzar.jobs().list(Anchor.after(123456), 20);
+
+        // To list or page through **only** successful jobs, use the successful() method:
+        for (JobManager jobManager : zamzar.jobs().successful().list().getItems()) {
+            System.out.println("Successful Job ID: " + jobManager.getModel().getId() + " was created at " + jobManager.getModel().getCreatedAt());
+        }
     }
 }

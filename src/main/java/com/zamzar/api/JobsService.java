@@ -28,6 +28,14 @@ public class JobsService implements Listable<JobManager, Integer> {
         this.api = new JobsApi(zamzar.client);
     }
 
+
+    /**
+     * Retrieves a service for managing successful jobs.
+     */
+    public SuccessfulJobsService successful() {
+        return new SuccessfulJobsService(zamzar);
+    }
+
     /**
      * Retrieves a job by its ID.
      */

@@ -32,6 +32,16 @@ public class JobsServiceTest extends ZamzarApiTest {
     }
 
     @Test
+    public void listSuccessful() throws Exception {
+        final Paged<JobManager, Integer> jobs = zamzar().jobs().successful().list();
+
+        for (JobManager job : jobs.getItems()) {
+            assertTrue(job.getId() > 0);
+            assertTrue(job.hasSucceeded());
+        }
+    }
+
+    @Test
     public void listAndPageForwards() throws Exception {
         // There are at least 3 jobs in the mock server
         // We'll therefore navigate 2 items at a time, and can expect at least 2 pages
