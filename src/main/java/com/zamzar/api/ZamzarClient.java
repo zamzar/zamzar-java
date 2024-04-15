@@ -22,10 +22,9 @@ import java.util.concurrent.TimeUnit;
  * <pre>
  *     ZamzarClient zamzar = new ZamzarClient("YOUR_API_KEY_GOES_HERE");
  *
- *     client
+ *     zamzar
  *      .convert(new File("path/to/source.pdf"), "jpg")
- *      .awaitOrThrow()
- *      .download(new File("path/to/destination.jpg"));
+ *      .store(new File("path/to/destination.jpg"));
  * </pre>
  *
  * @see <a href="https://developers.zamzar.com/docs">Zamzar API Documentation</a>
@@ -157,8 +156,7 @@ public class ZamzarClient {
     }
 
     /**
-     * Converts a local file to the specified format. Call {@link JobManager#awaitOrThrow()} on the result
-     * to wait for the conversion to complete.
+     * Converts a local file to the specified format, blocking until the conversion is complete.
      * <p>
      * Example usage:
      * <pre>
@@ -166,8 +164,7 @@ public class ZamzarClient {
      *
      *     zamzar
      *       .convert(new File("path/to/source.pdf"), "jpg")
-     *       .awaitOrThrow()
-     *       .download(new File("path/to/destination.jpg"))
+     *       .store(new File("path/to/destination.jpg"))
      *       .deleteAllFiles();
      * </pre>
      */
@@ -176,8 +173,8 @@ public class ZamzarClient {
     }
 
     /**
-     * Converts a local file to the specified format using a custom job builder. Call {@link JobManager#awaitOrThrow()}
-     * on the result to wait for the conversion to complete.
+     * Converts a local file to the specified format using a custom job builder, blocking until the conversion is
+     * complete.
      * <p>
      * Example usage:
      * <pre>
@@ -189,7 +186,6 @@ public class ZamzarClient {
      *         "jpg",
      *         builder -> builder.exportingTo("s3://my-bucket/path/to/destination.jpg")
      *       )
-     *       .awaitOrThrow()
      *       .deleteAllFiles();
      * </pre>
      */
@@ -198,8 +194,7 @@ public class ZamzarClient {
     }
 
     /**
-     * Converts a file already present on Zamzar's API servers to the specified format. Call {@link JobManager#awaitOrThrow()}
-     * on the result to wait for the conversion to complete.
+     * Converts a file already present on Zamzar's API servers to the specified format.
      * <p>
      * Example usage:
      * <pre>
@@ -207,8 +202,7 @@ public class ZamzarClient {
      *
      *     zamzar
      *       .convert(123, "jpg")
-     *       .awaitOrThrow()
-     *       .download(new File("path/to/destination.jpg"))
+     *       .store(new File("path/to/destination.jpg"))
      *       .deleteTargetFiles();
      * </pre>
      */
@@ -218,7 +212,6 @@ public class ZamzarClient {
 
     /**
      * Converts a file already present on Zamzar's API servers to the specified format using a custom job builder.
-     * Call {@link JobManager#awaitOrThrow()} on the result to wait for the conversion to complete.
      * <p>
      * Example usage:
      * <pre>
@@ -230,7 +223,6 @@ public class ZamzarClient {
      *         "jpg",
      *         builder -> builder.exportingTo("s3://my-bucket/path/to/destination.jpg")
      *       )
-     *       .awaitOrThrow()
      *       .deleteTargetFiles();
      * </pre>
      */
@@ -239,8 +231,7 @@ public class ZamzarClient {
     }
 
     /**
-     * Converts a file at the given URL to the specified format. Call {@link JobManager#awaitOrThrow()} on the result
-     * to wait for the conversion to complete.
+     * Converts a file at the given URL to the specified format.
      * <p>
      * Example usage:
      * <pre>
@@ -248,8 +239,7 @@ public class ZamzarClient {
      *
      *     zamzar
      *       .convert(new URL("https://example.com/source.pdf"), "jpg")
-     *       .awaitOrThrow()
-     *       .download(new File("path/to/destination.jpg"))
+     *       .store(new File("path/to/destination.jpg"))
      *       .deleteAllFiles();
      * </pre>
      */
@@ -258,8 +248,7 @@ public class ZamzarClient {
     }
 
     /**
-     * Converts a file at the given URL to the specified format using a custom job builder. Call {@link JobManager#awaitOrThrow()}
-     * on the result to wait for the conversion to complete.
+     * Converts a file at the given URL to the specified format using a custom job builder.
      * <p>
      * Example usage:
      * <pre>
@@ -271,7 +260,6 @@ public class ZamzarClient {
      *         "jpg",
      *         builder -> builder.exportingTo("s3://my-bucket/path/to/destination.jpg")
      *       )
-     *       .awaitOrThrow()
      *       .deleteAllFiles();
      * </pre>
      */
