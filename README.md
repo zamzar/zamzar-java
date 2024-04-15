@@ -65,7 +65,7 @@ public class GettingStarted {
         // Converts /tmp/example.docx to /tmp/example.pdf
         client
             .convert(new File("/tmp/example.docx"), "pdf") // uploads and converts your file
-            .store(new File("/tmp/example.zip")) // downloads the converted file
+            .store(new File("/tmp/")) // downloads the converted file
             .deleteAllFiles(); // removes your files (example.docx and example.pdf) from Zamzar's servers
     }
 }
@@ -73,6 +73,27 @@ public class GettingStarted {
 
 See the [examples](https://github.com/zamzar/zamzar-java/tree/main/src/test/java/com/zamzar/api/examples) to learn more
 about how to use the Zamzar Java library.
+
+### Using the sandbox environment
+
+Whilst developing your application, you can use the Zamzar sandbox environment to test your code without consuming
+production credits:
+
+```java
+import com.zamzar.api.ZamzarClient;
+import com.zamzar.api.ZamzarEnvironment;
+
+ZamzarClient client = new ZamzarClient("YOUR_API_KEY_GOES_HERE", ZamzarEnvironment.SANDBOX);
+```
+
+The Zamzar Java library uses the production environment by default, but you can also specify it explicitly:
+
+```java
+import com.zamzar.api.ZamzarClient;
+import com.zamzar.api.ZamzarEnvironment;
+
+ZamzarClient client = new ZamzarClient("YOUR_API_KEY_GOES_HERE", ZamzarEnvironment.PRODUCTION);
+```
 
 ### Logging
 
