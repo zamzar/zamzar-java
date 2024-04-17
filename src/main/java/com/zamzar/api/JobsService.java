@@ -66,21 +66,28 @@ public class JobsService implements Listable<JobManager, Integer> {
     }
 
     /**
-     * Starts a job to convert a local file.
+     * Starts a job to convert a local file, returning once the job has been created.
+     * <p>
+     * Call {@link JobManager#awaitOrThrow()} on the returned object to block until the job has completed.
      */
     public JobManager create(File source, String targetFormat) throws ApiException {
         return create(source, targetFormat, JobBuilder.Modifier.identity());
     }
 
     /**
-     * Starts a job to convert a local file, with a customised job builder.
+     * Starts a job to convert a local file, with a customised job builder; returning once the job has been created.
+     * <p>
+     * Call {@link JobManager#awaitOrThrow()} on the returned object to block until the job has completed.
      */
     public JobManager create(File source, String targetFormat, JobBuilder.Modifier modifier) throws ApiException {
         return create(modifier.modify(new JobBuilder(source, targetFormat)));
     }
 
     /**
-     * Starts a job to convert a file already resident on the Zamzar API servers.
+     * Starts a job to convert a file already resident on the Zamzar API servers; returning once the job has been
+     * created.
+     * <p>
+     * Call {@link JobManager#awaitOrThrow()} on the returned object to block until the job has completed.
      */
     public JobManager create(Integer sourceId, String targetFormat) throws ApiException {
         return create(sourceId, targetFormat, JobBuilder.Modifier.identity());
@@ -88,20 +95,28 @@ public class JobsService implements Listable<JobManager, Integer> {
 
     /**
      * Starts a job to convert a file already resident on the Zamzar API servers, with a customised job builder.
+     * Returns once the job has been created.
+     * <p>
+     * Call {@link JobManager#awaitOrThrow()} on the returned object to block until the job has completed.
      */
     public JobManager create(Integer sourceId, String targetFormat, JobBuilder.Modifier modifier) throws ApiException {
         return create(modifier.modify(new JobBuilder(sourceId, targetFormat)));
     }
 
     /**
-     * Starts a job to convert a file from a URL.
+     * Starts a job to convert a file from a URL, returning once the job has been created.
+     * <p>
+     * Call {@link JobManager#awaitOrThrow()} on the returned object to block until the job has completed.
      */
     public JobManager create(URI source, String targetFormat) throws ApiException {
         return create(source, targetFormat, JobBuilder.Modifier.identity());
     }
 
     /**
-     * Starts a job to convert a file from a URL, with a customised job builder.
+     * Starts a job to convert a file from a URL, with a customised job builder; returning once the job has been
+     * created.
+     * <p>
+     * Call {@link JobManager#awaitOrThrow()} on the returned object to block until the job has completed.
      */
     public JobManager create(URI source, String targetFormat, JobBuilder.Modifier modifier) throws ApiException {
         return create(modifier.modify(new JobBuilder(source, targetFormat)));
