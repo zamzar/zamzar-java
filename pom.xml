@@ -256,6 +256,8 @@
                     <autoPublish>true</autoPublish>
                     <publishingServerId>central</publishingServerId>
                     <tokenAuth>true</tokenAuth>
+                    <!-- wait up to 2 hours for the artifact to be published -->
+                    <waitMaxTime>7200</waitMaxTime>
                     <waitUntil>published</waitUntil>
                 </configuration>
             </plugin>
