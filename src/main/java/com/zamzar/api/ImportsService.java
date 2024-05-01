@@ -50,14 +50,14 @@ public class ImportsService implements Listable<ImportManager, Integer> {
      * Starts an import request.
      */
     public ImportManager start(String url) throws ApiException {
-        return new ImportManager(zamzar, api.startImport(url, null));
+        return toImport(api.startImport(url, null));
     }
 
     /**
      * Starts an import request, overriding the filename (rather than using the filename from the URL).
      */
     public ImportManager start(String url, String filename) throws ApiException {
-        return new ImportManager(zamzar, api.startImport(url, filename));
+        return toImport(api.startImport(url, filename));
     }
 
     protected List<ImportManager> toImports(List<ModelImport> models) {

@@ -47,11 +47,11 @@ public class JobBuilderTest {
         return Stream.of(
             // URL / extension
             Arguments.of("https://example.com/file", null),
-            Arguments.of("https://example.com/file?query=param", null, "file"),
-            Arguments.of("https://example.com/", "txt", null),
-            Arguments.of("https://example.com/", null, null),
-            Arguments.of("https://example.com", "txt", null),
-            Arguments.of("https://example.com", null, null)
+            Arguments.of("https://example.com/file?query=param", null),
+            Arguments.of("https://example.com/", "txt"),
+            Arguments.of("https://example.com/", null),
+            Arguments.of("https://example.com", "txt"),
+            Arguments.of("https://example.com", null)
         );
     }
 }
