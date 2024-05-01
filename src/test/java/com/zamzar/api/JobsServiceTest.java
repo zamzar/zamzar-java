@@ -4,13 +4,10 @@ import com.zamzar.api.invoker.ApiException;
 import com.zamzar.api.model.Job;
 import com.zamzar.api.pagination.Anchor;
 import com.zamzar.api.pagination.Paged;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -110,7 +107,15 @@ public class JobsServiceTest extends ZamzarApiTest {
             .jobs()
             .create(new URI("https://www.example.com/logo.png"), "jpg");
 
-        // Check that a non-empty file has been downloaded
+        assertTrue(job.getId() > 0);
+    }
+
+    @Test
+    public void createFromExistingFile() throws Exception {
+        final JobManager job = zamzar()
+            .jobs()
+            .create(FILE_ID, "jpg");
+
         assertTrue(job.getId() > 0);
     }
 
@@ -131,16 +136,5 @@ public class JobsServiceTest extends ZamzarApiTest {
 
         // Check that fresh requests return the updated status
         assertEquals(Job.StatusEnum.CANCELLED, job.refresh().getModel().getStatus());
-    }
-
-    private void createJobs(int count) throws Exception {
-        for (int i = 0; i < count; i++) {
-            zamzar().jobs().create(createTempFile("input-" + i).toFile(), "txt");
-        }
-    }
-
-    @NotNull
-    private static List<Integer> getIdsOfJobsIn(Paged<JobManager, Integer> page) {
-        return page.getItems().stream().map(JobManager::getId).collect(Collectors.toList());
     }
 }

@@ -83,4 +83,10 @@ public class JobManagerTest extends ZamzarApiTest {
         assertEquals(3, pngs.size());
         pngs.forEach(ZamzarApiTest::assertNonEmptyFile);
     }
+
+    @Test
+    public void storeThrowsWhenNoTargetFiles() throws Exception {
+        final JobManager job = zamzar().jobs().find(FAILING_JOB_ID).await();
+        assertThrows(ApiException.class, () -> job.store(createTempFile("output").toFile()));
+    }
 }
