@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -68,6 +69,10 @@ public class JobManager extends Awaitable<JobManager> {
      * Returns the IDs of the target files produced by the conversion.
      */
     public List<Integer> getTargetFileIds() {
+        if (getTargetFiles() == null) {
+            return Collections.emptyList();
+        }
+
         return getTargetFiles()
             .stream()
             .mapToInt(ModelFile::getId)
