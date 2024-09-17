@@ -1,12 +1,17 @@
-# Zamzar Java
+# Java file converter library for Zamzar
 
 [![@zamzar on Twitter](https://img.shields.io/badge/twitter-zamzar-blue)](https://twitter.com/zamzar)
 ![Maven Central Version](https://img.shields.io/maven-central/v/com.zamzar/zamzar-java)
 [![GitHub License](https://img.shields.io/github/license/zamzar/zamzar-mock)](https://github.com/zamzar/zamzar-mock/blob/main/LICENSE)
 
-The official Java SDK for the [Zamzar API](https://developers.zamzar.com).
+Easy to use Java file conversion API with support for 1,100+ file conversions - convert documents, audio, images, video, eBooks and more. Use `zamzar-java` to convert files between different formats as part of your Java application with the [Zamzar file conversion API](https://developers.zamzar.com). Common use cases include:
 
-`zamzar-java` makes it easy to convert files between different formats as part of your Java applications.
+- Convert Microsoft Word (DOCX, DOC) to PDF
+- Archive email (MSG files) to PDF
+- Convert Powerpoint (PPT, PPTX) to JPG
+- Extract text from PDF files
+
+This is the official Java SDK for the [Zamzar API](https://developers.zamzar.com).
 
 Jump to:
 
