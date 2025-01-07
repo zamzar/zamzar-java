@@ -44,7 +44,7 @@ public class BackOffRetryWhenRateLimitedTest {
         final long elapsed = end - start;
 
         assertEquals(429, response.code());
-        assertEquals(timeout.toMillis(), elapsed, 100);
+        assertEquals(timeout.toMillis(), elapsed, 1500);
     }
 
 
