@@ -5,7 +5,7 @@
     <artifactId>zamzar-java</artifactId>
     <packaging>jar</packaging>
     <name>zamzar-java</name>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <url>https://github.com/zamzar/zamzar-java</url>
     <description>Java SDK for the Zamzar API</description>
     <scm>
