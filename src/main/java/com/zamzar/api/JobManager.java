@@ -111,17 +111,29 @@ public class JobManager extends Awaitable<JobManager> {
     /**
      * Downloads all the target files produced by the conversion to the specified destination, blocking until the
      * download is complete.
+     *
+     * @param destination The file or directory to store the output.
      */
     public JobManager store(File destination) throws ApiException {
+        return store(destination, true);
+    }
+
+    /**
+     * Downloads all the target files produced by the conversion to the specified destination, blocking until the
+     * download is complete.
+     *
+     * @param destination               The file or directory to store the output.
+     * @param extractMultipleFileOutput If false, do not extract ZIP contents for multi-file jobs.
+     */
+    public JobManager store(File destination, boolean extractMultipleFileOutput) throws ApiException {
         if (getTargetFileIds().isEmpty()) {
             throw new ApiException("No target files to download");
         }
         ModelFile source = getPrimaryTargetFile();
         destination = zamzar.files().download(source, destination);
-        if (getTargetFileIds().size() > 1) {
+        if (getTargetFileIds().size() > 1 && extractMultipleFileOutput) {
             this.extract(destination);
         }
-
         return this;
     }
 

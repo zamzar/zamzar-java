@@ -14,6 +14,16 @@ public class StartJob {
             .convert(new File("path/to/your/file.docx"), "pdf")
             .store(new File("path/to/your/file.pdf"));
 
+        // Convert a local file that produces multiple output files (e.g. a multi-page PDF to PNGs)
+        zamzar
+            .convert(new File("path/to/your/multipage.pdf"), "png")
+            .store(new File("path/to/output/directory"));
+
+        // Convert a local file that produces multiple output files and download them as a ZIP file
+        zamzar
+            .convert(new File("path/to/your/multipage.pdf"), "png")
+            .store(new File("path/to/output/directory"), false);
+
         // Convert a remote file, wait for it to complete (or throw an exception if it fails), and download the result
         zamzar
             .convert(new URI("https://www.zamzar.com/images/zamzar-logo.png"), "jpg")

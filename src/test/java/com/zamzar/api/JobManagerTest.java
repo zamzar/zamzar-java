@@ -85,6 +85,26 @@ public class JobManagerTest extends ZamzarApiTest {
     }
 
     @Test
+    public void storeMultiFileJobToDirectoryNoExtract() throws Exception {
+        assertEquals(findTempFiles().size(), 0, "Sanity check failed. Expected output files not to exist yet");
+
+        zamzar()
+            .jobs()
+            .find(SUCCEEDING_MULTI_OUTPUT_JOB_ID)
+            .awaitOrThrow()
+            .store(TEMP_DIR.toFile(), false);
+
+        // Check that the directory contains the ZIP file
+        final List<Path> zips = findTempFiles(path -> path.toString().endsWith(".zip"));
+        assertEquals(1, zips.size());
+        zips.forEach(ZamzarApiTest::assertNonEmptyFile);
+
+        // Check that the directory does NOT contain any extracted PNGs
+        final List<Path> pngs = findTempFiles(path -> path.toString().endsWith(".png"));
+        assertEquals(0, pngs.size());
+    }
+
+    @Test
     public void storeThrowsWhenNoTargetFiles() throws Exception {
         final JobManager job = zamzar().jobs().find(FAILING_JOB_ID).await();
         assertThrows(ApiException.class, () -> job.store(createTempFile("output").toFile()));
