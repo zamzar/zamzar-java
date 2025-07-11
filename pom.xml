@@ -83,14 +83,6 @@
                     <parallel>methods</parallel>
                     <threadCount>10</threadCount>
                 </configuration>
-                <dependencies>
-                    <!--Custom provider and engine for Junit 5 to surefire-->
-                    <dependency>
-                        <groupId>org.junit.jupiter</groupId>
-                        <artifactId>junit-jupiter-engine</artifactId>
-                        <version>${junit-version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -330,12 +322,6 @@
             <version>${junit-version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>${junit-platform-runner.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <properties>
         <java.version>1.8</java.version>
@@ -348,7 +334,6 @@
         <jackson-databind-nullable-version>0.2.6</jackson-databind-nullable-version>
         <jakarta-annotation-version>3.0.0</jakarta-annotation-version>
         <junit-version>5.13.3</junit-version>
-        <junit-platform-runner.version>1.13.3</junit-platform-runner.version>
         <javax.ws.rs-api-version>2.1.1</javax.ws.rs-api-version>
         <jsr311-api-version>1.1.1</jsr311-api-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
