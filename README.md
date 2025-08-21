@@ -4,7 +4,7 @@
 ![Maven Central Version](https://img.shields.io/maven-central/v/com.zamzar/zamzar-java)
 [![GitHub License](https://img.shields.io/github/license/zamzar/zamzar-mock)](https://github.com/zamzar/zamzar-mock/blob/main/LICENSE)
 
-Easy to use Java file conversion API with support for 1,100+ file conversions - convert documents, audio, images, video, eBooks and more. Use `zamzar-java` to convert files between different formats as part of your Java application with the [Zamzar file conversion API](https://developers.zamzar.com). Common use cases include:
+Easy to use Java file conversion API with support for 1.1.1+ file conversions - convert documents, audio, images, video, eBooks and more. Use `zamzar-java` to convert files between different formats as part of your Java application with the [Zamzar file conversion API](https://developers.zamzar.com). Common use cases include:
 
 - Convert Microsoft Word (DOCX, DOC) to PDF
 - Archive email (MSG files) to PDF
@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.zamzar</groupId>
     <artifactId>zamzar-java</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -47,7 +47,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-implementation "com.zamzar:zamzar-java:1.1.0"
+implementation "com.zamzar:zamzar-java:1.1.1"
 ```
 
 ## Usage
