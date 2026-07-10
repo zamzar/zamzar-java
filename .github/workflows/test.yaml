@@ -5,8 +5,18 @@ on:
 
 jobs:
   test:
-    name: Run tests
+    name: Run tests for Java ${{ matrix.java-version }}
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        java-version:
+          - "8"  # Oldest supported
+          - "25" # Latest release (LTS)
+
+    env:
+      JAVA_VERSION: ${{ matrix.java-version }}
 
     steps:
       - name: Checkout repo
