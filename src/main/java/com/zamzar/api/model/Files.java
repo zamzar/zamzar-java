@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,20 +52,22 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of files. Newer files appear before older files. Expired files are not included.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Files {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private List<ModelFile> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
+  @javax.annotation.Nullable
   private PagingNumeric paging;
 
   public Files() {
   }
 
-  public Files data(List<ModelFile> data) {
+  public Files data(@javax.annotation.Nullable List<ModelFile> data) {
     this.data = data;
     return this;
   }
@@ -88,12 +89,12 @@ public class Files {
     return data;
   }
 
-  public void setData(List<ModelFile> data) {
+  public void setData(@javax.annotation.Nullable List<ModelFile> data) {
     this.data = data;
   }
 
 
-  public Files paging(PagingNumeric paging) {
+  public Files paging(@javax.annotation.Nullable PagingNumeric paging) {
     this.paging = paging;
     return this;
   }
@@ -107,7 +108,7 @@ public class Files {
     return paging;
   }
 
-  public void setPaging(PagingNumeric paging) {
+  public void setPaging(@javax.annotation.Nullable PagingNumeric paging) {
     this.paging = paging;
   }
 

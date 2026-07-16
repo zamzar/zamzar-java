@@ -82,7 +82,8 @@ public class FilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
@@ -150,7 +151,8 @@ public class FilesApi {
      * @return ModelFile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
@@ -167,7 +169,8 @@ public class FilesApi {
      * @return ApiResponse&lt;ModelFile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
@@ -186,7 +189,8 @@ public class FilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
@@ -205,7 +209,8 @@ public class FilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata for a specific file </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource is not available because it has been deleted </td><td>  -  </td></tr>
@@ -275,7 +280,8 @@ public class FilesApi {
      * @return ModelFile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata for a specific file </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource is not available because it has been deleted </td><td>  -  </td></tr>
@@ -294,7 +300,8 @@ public class FilesApi {
      * @return ApiResponse&lt;ModelFile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata for a specific file </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource is not available because it has been deleted </td><td>  -  </td></tr>
@@ -315,7 +322,8 @@ public class FilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Metadata for a specific file </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource is not available because it has been deleted </td><td>  -  </td></tr>
@@ -336,7 +344,8 @@ public class FilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * Content-Disposition -  <br>  </td></tr>
         <tr><td> 201 </td><td> The body of the response will contain the contents of a file in which case you can download the file data directly:  &#x60;&#x60;&#x60; HTTP/1.1 200 OK Content-Length: 15311 Content-Disposition: attachment; filename&#x3D;\&quot;portrait.png\&quot; Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: image/png; charset&#x3D;binary  [Binary content of portrait.png] &#x60;&#x60;&#x60;  ### When using cURL  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  * header-0 -  <br>  </td></tr>
@@ -406,7 +415,8 @@ public class FilesApi {
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * Content-Disposition -  <br>  </td></tr>
         <tr><td> 201 </td><td> The body of the response will contain the contents of a file in which case you can download the file data directly:  &#x60;&#x60;&#x60; HTTP/1.1 200 OK Content-Length: 15311 Content-Disposition: attachment; filename&#x3D;\&quot;portrait.png\&quot; Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: image/png; charset&#x3D;binary  [Binary content of portrait.png] &#x60;&#x60;&#x60;  ### When using cURL  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  * header-0 -  <br>  </td></tr>
@@ -425,7 +435,8 @@ public class FilesApi {
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * Content-Disposition -  <br>  </td></tr>
         <tr><td> 201 </td><td> The body of the response will contain the contents of a file in which case you can download the file data directly:  &#x60;&#x60;&#x60; HTTP/1.1 200 OK Content-Length: 15311 Content-Disposition: attachment; filename&#x3D;\&quot;portrait.png\&quot; Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: image/png; charset&#x3D;binary  [Binary content of portrait.png] &#x60;&#x60;&#x60;  ### When using cURL  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  * header-0 -  <br>  </td></tr>
@@ -446,7 +457,8 @@ public class FilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  * Content-Disposition -  <br>  </td></tr>
         <tr><td> 201 </td><td> The body of the response will contain the contents of a file in which case you can download the file data directly:  &#x60;&#x60;&#x60; HTTP/1.1 200 OK Content-Length: 15311 Content-Disposition: attachment; filename&#x3D;\&quot;portrait.png\&quot; Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: image/png; charset&#x3D;binary  [Binary content of portrait.png] &#x60;&#x60;&#x60;  ### When using cURL  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  * header-0 -  <br>  </td></tr>
@@ -469,7 +481,8 @@ public class FilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
@@ -545,7 +558,8 @@ public class FilesApi {
      * @return Files
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
@@ -564,7 +578,8 @@ public class FilesApi {
      * @return ApiResponse&lt;Files&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
@@ -585,7 +600,8 @@ public class FilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
@@ -605,7 +621,8 @@ public class FilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>
@@ -677,7 +694,8 @@ public class FilesApi {
      * @return ModelFile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>
@@ -695,7 +713,8 @@ public class FilesApi {
      * @return ApiResponse&lt;ModelFile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>
@@ -715,7 +734,8 @@ public class FilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>

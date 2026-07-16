@@ -80,7 +80,8 @@ public class FormatsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A specific source format and valid target formats.  &#x60;&#x60;&#x60;json {   \&quot;name\&quot;: \&quot;doc\&quot;,   \&quot;targets\&quot;: [     {       \&quot;name\&quot;: \&quot;docx\&quot;,       \&quot;credit_cost\&quot;: 1     },     {       \&quot;name\&quot;: \&quot;pdf\&quot;,       \&quot;credit_cost\&quot;: 1     }   ] } &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
@@ -149,7 +150,8 @@ public class FormatsApi {
      * @return Format
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A specific source format and valid target formats.  &#x60;&#x60;&#x60;json {   \&quot;name\&quot;: \&quot;doc\&quot;,   \&quot;targets\&quot;: [     {       \&quot;name\&quot;: \&quot;docx\&quot;,       \&quot;credit_cost\&quot;: 1     },     {       \&quot;name\&quot;: \&quot;pdf\&quot;,       \&quot;credit_cost\&quot;: 1     }   ] } &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
@@ -167,7 +169,8 @@ public class FormatsApi {
      * @return ApiResponse&lt;Format&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A specific source format and valid target formats.  &#x60;&#x60;&#x60;json {   \&quot;name\&quot;: \&quot;doc\&quot;,   \&quot;targets\&quot;: [     {       \&quot;name\&quot;: \&quot;docx\&quot;,       \&quot;credit_cost\&quot;: 1     },     {       \&quot;name\&quot;: \&quot;pdf\&quot;,       \&quot;credit_cost\&quot;: 1     }   ] } &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
@@ -187,7 +190,8 @@ public class FormatsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A specific source format and valid target formats.  &#x60;&#x60;&#x60;json {   \&quot;name\&quot;: \&quot;doc\&quot;,   \&quot;targets\&quot;: [     {       \&quot;name\&quot;: \&quot;docx\&quot;,       \&quot;credit_cost\&quot;: 1     },     {       \&quot;name\&quot;: \&quot;pdf\&quot;,       \&quot;credit_cost\&quot;: 1     }   ] } &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
@@ -209,7 +213,8 @@ public class FormatsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
@@ -285,7 +290,8 @@ public class FormatsApi {
      * @return Formats
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
@@ -304,7 +310,8 @@ public class FormatsApi {
      * @return ApiResponse&lt;Formats&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
@@ -325,7 +332,8 @@ public class FormatsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>

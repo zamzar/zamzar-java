@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,18 +52,21 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents the process of copying a file from an external URL, (S)FTP server, or an Amazon S3 bucket.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ModelImport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private Integer id;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   /**
@@ -125,28 +127,33 @@ public class ModelImport {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_FAILURE = "failure";
   @SerializedName(SERIALIZED_NAME_FAILURE)
+  @javax.annotation.Nullable
   private Failure failure;
 
   public static final String SERIALIZED_NAME_FILE = "file";
   @SerializedName(SERIALIZED_NAME_FILE)
+  @javax.annotation.Nullable
   private ModelFile _file;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_FINISHED_AT = "finished_at";
   @SerializedName(SERIALIZED_NAME_FINISHED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime finishedAt;
 
   public ModelImport() {
   }
 
-  public ModelImport id(Integer id) {
+  public ModelImport id(@javax.annotation.Nonnull Integer id) {
     this.id = id;
     return this;
   }
@@ -160,12 +167,12 @@ public class ModelImport {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(@javax.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
 
-  public ModelImport key(String key) {
+  public ModelImport key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
@@ -179,12 +186,12 @@ public class ModelImport {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public ModelImport url(String url) {
+  public ModelImport url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -198,12 +205,12 @@ public class ModelImport {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public ModelImport status(StatusEnum status) {
+  public ModelImport status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -217,12 +224,12 @@ public class ModelImport {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public ModelImport failure(Failure failure) {
+  public ModelImport failure(@javax.annotation.Nullable Failure failure) {
     this.failure = failure;
     return this;
   }
@@ -236,12 +243,12 @@ public class ModelImport {
     return failure;
   }
 
-  public void setFailure(Failure failure) {
+  public void setFailure(@javax.annotation.Nullable Failure failure) {
     this.failure = failure;
   }
 
 
-  public ModelImport _file(ModelFile _file) {
+  public ModelImport _file(@javax.annotation.Nullable ModelFile _file) {
     this._file = _file;
     return this;
   }
@@ -255,12 +262,12 @@ public class ModelImport {
     return _file;
   }
 
-  public void setFile(ModelFile _file) {
+  public void setFile(@javax.annotation.Nullable ModelFile _file) {
     this._file = _file;
   }
 
 
-  public ModelImport createdAt(OffsetDateTime createdAt) {
+  public ModelImport createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -274,12 +281,12 @@ public class ModelImport {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ModelImport finishedAt(OffsetDateTime finishedAt) {
+  public ModelImport finishedAt(@javax.annotation.Nullable OffsetDateTime finishedAt) {
     this.finishedAt = finishedAt;
     return this;
   }
@@ -293,7 +300,7 @@ public class ModelImport {
     return finishedAt;
   }
 
-  public void setFinishedAt(OffsetDateTime finishedAt) {
+  public void setFinishedAt(@javax.annotation.Nullable OffsetDateTime finishedAt) {
     this.finishedAt = finishedAt;
   }
 

@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,16 +51,17 @@ import com.zamzar.api.invoker.JSON;
 /**
  * When a response contains a &#x60;4xx&#x60; or &#x60;5xx&#x60; response code, the body of the request will contain one or more error objects. Problems
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Errors {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nullable
   private List<Error> errors = new ArrayList<>();
 
   public Errors() {
   }
 
-  public Errors errors(List<Error> errors) {
+  public Errors errors(@javax.annotation.Nullable List<Error> errors) {
     this.errors = errors;
     return this;
   }
@@ -83,7 +83,7 @@ public class Errors {
     return errors;
   }
 
-  public void setErrors(List<Error> errors) {
+  public void setErrors(@javax.annotation.Nullable List<Error> errors) {
     this.errors = errors;
   }
 

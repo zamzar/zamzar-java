@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,36 +49,42 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents a file which has been uploaded, imported or converted.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ModelFile {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private Integer id;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
+  @javax.annotation.Nullable
   private Long size;
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
+  @javax.annotation.Nullable
   private String format;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public ModelFile() {
   }
 
-  public ModelFile id(Integer id) {
+  public ModelFile id(@javax.annotation.Nonnull Integer id) {
     this.id = id;
     return this;
   }
@@ -93,12 +98,12 @@ public class ModelFile {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(@javax.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
 
-  public ModelFile key(String key) {
+  public ModelFile key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
@@ -112,12 +117,12 @@ public class ModelFile {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public ModelFile name(String name) {
+  public ModelFile name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -131,12 +136,12 @@ public class ModelFile {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ModelFile size(Long size) {
+  public ModelFile size(@javax.annotation.Nullable Long size) {
     this.size = size;
     return this;
   }
@@ -150,12 +155,12 @@ public class ModelFile {
     return size;
   }
 
-  public void setSize(Long size) {
+  public void setSize(@javax.annotation.Nullable Long size) {
     this.size = size;
   }
 
 
-  public ModelFile format(String format) {
+  public ModelFile format(@javax.annotation.Nullable String format) {
     this.format = format;
     return this;
   }
@@ -169,12 +174,12 @@ public class ModelFile {
     return format;
   }
 
-  public void setFormat(String format) {
+  public void setFormat(@javax.annotation.Nullable String format) {
     this.format = format;
   }
 
 
-  public ModelFile createdAt(OffsetDateTime createdAt) {
+  public ModelFile createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -188,7 +193,7 @@ public class ModelFile {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 

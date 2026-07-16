@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,20 +48,22 @@ import com.zamzar.api.invoker.JSON;
 /**
  * FormatTargetsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class FormatTargetsInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_CREDIT_COST = "credit_cost";
   @SerializedName(SERIALIZED_NAME_CREDIT_COST)
+  @javax.annotation.Nullable
   private Integer creditCost;
 
   public FormatTargetsInner() {
   }
 
-  public FormatTargetsInner name(String name) {
+  public FormatTargetsInner name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -76,12 +77,12 @@ public class FormatTargetsInner {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public FormatTargetsInner creditCost(Integer creditCost) {
+  public FormatTargetsInner creditCost(@javax.annotation.Nullable Integer creditCost) {
     this.creditCost = creditCost;
     return this;
   }
@@ -95,7 +96,7 @@ public class FormatTargetsInner {
     return creditCost;
   }
 
-  public void setCreditCost(Integer creditCost) {
+  public void setCreditCost(@javax.annotation.Nullable Integer creditCost) {
     this.creditCost = creditCost;
   }
 
