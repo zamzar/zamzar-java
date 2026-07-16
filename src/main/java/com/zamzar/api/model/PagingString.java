@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * When you request a list of of all resources of any type (files, formats, jobs), you will receive a paged collection as a response. A paged collection allows you to view a subset of the entire collection (limited to 50 elements) and makes it easy to implement pagination in your application. Use the &#x60;limit&#x60; parameter to limit the number of results and the &#x60;after&#x60; parameter to request the next page of results (based on the value of &#x60;last&#x60; within the paging object).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class PagingString {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
@@ -75,10 +75,10 @@ public class PagingString {
     return this;
   }
 
-   /**
+  /**
    * The number of elements in the entire collection
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalCount() {
     return totalCount;
@@ -94,10 +94,10 @@ public class PagingString {
     return this;
   }
 
-   /**
+  /**
    * The identifier of the first element in this page of the collection
    * @return first
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirst() {
     return first;
@@ -113,10 +113,10 @@ public class PagingString {
     return this;
   }
 
-   /**
+  /**
    * The identifier of the last element in this page of the collection
    * @return last
-  **/
+   */
   @javax.annotation.Nullable
   public String getLast() {
     return last;
@@ -132,10 +132,10 @@ public class PagingString {
     return this;
   }
 
-   /**
+  /**
    * The maximum number of elements this page could contain
    * @return limit
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getLimit() {
     return limit;
@@ -206,12 +206,12 @@ public class PagingString {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PagingString
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PagingString
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PagingString.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -264,22 +264,22 @@ public class PagingString {
     }
   }
 
- /**
-  * Create an instance of PagingString given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PagingString
-  * @throws IOException if the JSON string is invalid with respect to PagingString
-  */
+  /**
+   * Create an instance of PagingString given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PagingString
+   * @throws IOException if the JSON string is invalid with respect to PagingString
+   */
   public static PagingString fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PagingString.class);
   }
 
- /**
-  * Convert an instance of PagingString to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PagingString to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

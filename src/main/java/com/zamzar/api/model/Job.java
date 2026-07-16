@@ -59,7 +59,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents the process of converting a file to another format.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -187,10 +187,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier assigned to the job
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getId() {
     return id;
@@ -206,10 +206,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The API key used to create the job
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
@@ -225,10 +225,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The current status of the job
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
@@ -244,10 +244,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * Get failure
    * @return failure
-  **/
+   */
   @javax.annotation.Nullable
   public Failure getFailure() {
     return failure;
@@ -263,10 +263,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * Indicates whether or not the job was processed on the developer sandbox (i.e. at no cost)
    * @return sandbox
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSandbox() {
     return sandbox;
@@ -282,10 +282,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The time at which the job was created (UTC in [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601))
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -301,10 +301,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The time at which the job finished if successful, or null otherwise (UTC in [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601))
    * @return finishedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getFinishedAt() {
     return finishedAt;
@@ -320,10 +320,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * Get _import
    * @return _import
-  **/
+   */
   @javax.annotation.Nullable
   public ModelImport getImport() {
     return _import;
@@ -339,10 +339,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * Get sourceFile
    * @return sourceFile
-  **/
+   */
   @javax.annotation.Nullable
   public ModelFile getSourceFile() {
     return sourceFile;
@@ -366,10 +366,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The output from the job
    * @return targetFiles
-  **/
+   */
   @javax.annotation.Nullable
   public List<ModelFile> getTargetFiles() {
     return targetFiles;
@@ -385,10 +385,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The name of the format to which &#x60;source_file&#x60; is being converted
    * @return targetFormat
-  **/
+   */
   @javax.annotation.Nullable
   public String getTargetFormat() {
     return targetFormat;
@@ -404,10 +404,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The cost in conversion credits of the job
    * @return creditCost
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getCreditCost() {
     return creditCost;
@@ -423,10 +423,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * The location to which all converted files will be copied
    * @return exportUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getExportUrl() {
     return exportUrl;
@@ -450,10 +450,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * An array of objects representing the process of copying converted files to the location specified in the export_url (when submitting a job via the &#x60;/jobs&#x60; endpoint)
    * @return exports
-  **/
+   */
   @javax.annotation.Nullable
   public List<Export> getExports() {
     return exports;
@@ -477,10 +477,10 @@ public class Job {
     return this;
   }
 
-   /**
+  /**
    * Additional options for the conversion
    * @return options
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, Object> getOptions() {
     return options;
@@ -596,12 +596,12 @@ public class Job {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Job
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Job
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Job.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -711,22 +711,22 @@ public class Job {
     }
   }
 
- /**
-  * Create an instance of Job given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Job
-  * @throws IOException if the JSON string is invalid with respect to Job
-  */
+  /**
+   * Create an instance of Job given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Job
+   * @throws IOException if the JSON string is invalid with respect to Job
+   */
   public static Job fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Job.class);
   }
 
- /**
-  * Convert an instance of Job to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Job to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

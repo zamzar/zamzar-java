@@ -50,7 +50,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * AccountPlan
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class AccountPlan {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -76,10 +76,10 @@ public class AccountPlan {
     return this;
   }
 
-   /**
+  /**
    * The name used to describe this plan
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -95,10 +95,10 @@ public class AccountPlan {
     return this;
   }
 
-   /**
+  /**
    * The monthly subscription cost for this plan
    * @return pricePerMonth
-  **/
+   */
   @javax.annotation.Nullable
   public Float getPricePerMonth() {
     return pricePerMonth;
@@ -114,10 +114,10 @@ public class AccountPlan {
     return this;
   }
 
-   /**
+  /**
    * The number of conversion credits included in this plan per month
    * @return conversionsPerMonth
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getConversionsPerMonth() {
     return conversionsPerMonth;
@@ -133,10 +133,10 @@ public class AccountPlan {
     return this;
   }
 
-   /**
+  /**
    * The maximum size (in bytes) of files that can be uploaded with this plan; or &#x60;null&#x60; if this plan has no such cap.
    * @return maximumFileSize
-  **/
+   */
   @javax.annotation.Nullable
   public Long getMaximumFileSize() {
     return maximumFileSize;
@@ -218,12 +218,12 @@ public class AccountPlan {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to AccountPlan
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to AccountPlan
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AccountPlan.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -273,22 +273,22 @@ public class AccountPlan {
     }
   }
 
- /**
-  * Create an instance of AccountPlan given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of AccountPlan
-  * @throws IOException if the JSON string is invalid with respect to AccountPlan
-  */
+  /**
+   * Create an instance of AccountPlan given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of AccountPlan
+   * @throws IOException if the JSON string is invalid with respect to AccountPlan
+   */
   public static AccountPlan fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, AccountPlan.class);
   }
 
- /**
-  * Convert an instance of AccountPlan to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of AccountPlan to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

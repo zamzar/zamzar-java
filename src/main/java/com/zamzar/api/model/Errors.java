@@ -52,7 +52,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * When a response contains a &#x60;4xx&#x60; or &#x60;5xx&#x60; response code, the body of the request will contain one or more error objects. Problems
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Errors {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
@@ -74,10 +74,10 @@ public class Errors {
     return this;
   }
 
-   /**
+  /**
    * Get errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nullable
   public List<Error> getErrors() {
     return errors;
@@ -139,12 +139,12 @@ public class Errors {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Errors
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Errors
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Errors.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -205,22 +205,22 @@ public class Errors {
     }
   }
 
- /**
-  * Create an instance of Errors given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Errors
-  * @throws IOException if the JSON string is invalid with respect to Errors
-  */
+  /**
+   * Create an instance of Errors given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Errors
+   * @throws IOException if the JSON string is invalid with respect to Errors
+   */
   public static Errors fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Errors.class);
   }
 
- /**
-  * Convert an instance of Errors to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Errors to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -53,7 +53,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of import objects. Newer imports appear before older imports.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Imports {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
@@ -71,10 +71,10 @@ public class Imports {
     return this;
   }
 
-   /**
+  /**
    * Get paging
    * @return paging
-  **/
+   */
   @javax.annotation.Nullable
   public PagingNumeric getPaging() {
     return paging;
@@ -98,10 +98,10 @@ public class Imports {
     return this;
   }
 
-   /**
+  /**
    * An array of import objects
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
   public List<ModelImport> getData() {
     return data;
@@ -166,12 +166,12 @@ public class Imports {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Imports
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Imports
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Imports.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -236,22 +236,22 @@ public class Imports {
     }
   }
 
- /**
-  * Create an instance of Imports given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Imports
-  * @throws IOException if the JSON string is invalid with respect to Imports
-  */
+  /**
+   * Create an instance of Imports given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Imports
+   * @throws IOException if the JSON string is invalid with respect to Imports
+   */
   public static Imports fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Imports.class);
   }
 
- /**
-  * Convert an instance of Imports to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Imports to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

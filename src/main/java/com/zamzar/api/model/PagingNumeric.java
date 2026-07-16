@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * PagingNumeric
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class PagingNumeric {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
@@ -75,10 +75,10 @@ public class PagingNumeric {
     return this;
   }
 
-   /**
+  /**
    * The number of elements in the entire collection
    * @return totalCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalCount() {
     return totalCount;
@@ -94,10 +94,10 @@ public class PagingNumeric {
     return this;
   }
 
-   /**
+  /**
    * The identifier of the first element in this page of the collection
    * @return first
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getFirst() {
     return first;
@@ -113,10 +113,10 @@ public class PagingNumeric {
     return this;
   }
 
-   /**
+  /**
    * The identifier of the last element in this page of the collection
    * @return last
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getLast() {
     return last;
@@ -132,10 +132,10 @@ public class PagingNumeric {
     return this;
   }
 
-   /**
+  /**
    * The maximum number of elements this page could contain
    * @return limit
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getLimit() {
     return limit;
@@ -206,12 +206,12 @@ public class PagingNumeric {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to PagingNumeric
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PagingNumeric
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PagingNumeric.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -258,22 +258,22 @@ public class PagingNumeric {
     }
   }
 
- /**
-  * Create an instance of PagingNumeric given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of PagingNumeric
-  * @throws IOException if the JSON string is invalid with respect to PagingNumeric
-  */
+  /**
+   * Create an instance of PagingNumeric given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PagingNumeric
+   * @throws IOException if the JSON string is invalid with respect to PagingNumeric
+   */
   public static PagingNumeric fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PagingNumeric.class);
   }
 
- /**
-  * Convert an instance of PagingNumeric to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of PagingNumeric to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

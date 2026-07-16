@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * If a process fails, the response will include a failure object to describe the error. If a process is either incomplete or successful, the failure object will not be present.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Failure {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -67,10 +67,10 @@ public class Failure {
     return this;
   }
 
-   /**
+  /**
    * Can be used to determine what action to take
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getCode() {
     return code;
@@ -86,10 +86,10 @@ public class Failure {
     return this;
   }
 
-   /**
+  /**
    * Provides an explanation of the failure (which could also be displayed to your users)
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
@@ -154,12 +154,12 @@ public class Failure {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Failure
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Failure
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Failure.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -209,22 +209,22 @@ public class Failure {
     }
   }
 
- /**
-  * Create an instance of Failure given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Failure
-  * @throws IOException if the JSON string is invalid with respect to Failure
-  */
+  /**
+   * Create an instance of Failure given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Failure
+   * @throws IOException if the JSON string is invalid with respect to Failure
+   */
   public static Failure fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Failure.class);
   }
 
- /**
-  * Convert an instance of Failure to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Failure to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

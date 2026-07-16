@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Welcome200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Welcome200Response {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
@@ -63,10 +63,10 @@ public class Welcome200Response {
     return this;
   }
 
-   /**
+  /**
    * Welcome message
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
@@ -128,12 +128,12 @@ public class Welcome200Response {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Welcome200Response
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Welcome200Response
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Welcome200Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -183,22 +183,22 @@ public class Welcome200Response {
     }
   }
 
- /**
-  * Create an instance of Welcome200Response given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Welcome200Response
-  * @throws IOException if the JSON string is invalid with respect to Welcome200Response
-  */
+  /**
+   * Create an instance of Welcome200Response given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Welcome200Response
+   * @throws IOException if the JSON string is invalid with respect to Welcome200Response
+   */
   public static Welcome200Response fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Welcome200Response.class);
   }
 
- /**
-  * Convert an instance of Welcome200Response to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Welcome200Response to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

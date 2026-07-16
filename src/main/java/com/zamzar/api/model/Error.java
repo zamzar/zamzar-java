@@ -50,7 +50,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * An error object containing a message, code and context. Returned within an array of &#x60;errors&#x60; when a response contains a &#x60;4xx&#x60; or &#x60;5xx&#x60; code.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Error {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -72,10 +72,10 @@ public class Error {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier for the type of error. &#x60;1x&#x60; relates to problems with the content of the request. &#x60;2x&#x60; relates to the nature of the request. &#x60;3x&#x60; relates to problems with the service.
    * @return code
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getCode() {
     return code;
@@ -91,10 +91,10 @@ public class Error {
     return this;
   }
 
-   /**
+  /**
    * The description of the error
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
@@ -110,10 +110,10 @@ public class Error {
     return this;
   }
 
-   /**
+  /**
    * Get context
    * @return context
-  **/
+   */
   @javax.annotation.Nullable
   public ErrorContext getContext() {
     return context;
@@ -181,12 +181,12 @@ public class Error {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Error
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Error
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Error.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -240,22 +240,22 @@ public class Error {
     }
   }
 
- /**
-  * Create an instance of Error given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Error
-  * @throws IOException if the JSON string is invalid with respect to Error
-  */
+  /**
+   * Create an instance of Error given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Error
+   * @throws IOException if the JSON string is invalid with respect to Error
+   */
   public static Error fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Error.class);
   }
 
- /**
-  * Convert an instance of Error to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Error to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
