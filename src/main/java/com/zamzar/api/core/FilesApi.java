@@ -88,7 +88,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFileByIdCall(Integer fileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFileByIdCall(@javax.annotation.Nonnull Integer fileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -134,7 +134,7 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFileByIdValidateBeforeCall(Integer fileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFileByIdValidateBeforeCall(@javax.annotation.Nonnull Integer fileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling deleteFileById(Async)");
@@ -157,7 +157,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile deleteFileById(Integer fileId) throws ApiException {
+    public ModelFile deleteFileById(@javax.annotation.Nonnull Integer fileId) throws ApiException {
         ApiResponse<ModelFile> localVarResp = deleteFileByIdWithHttpInfo(fileId);
         return localVarResp.getData();
     }
@@ -175,7 +175,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> deleteFileByIdWithHttpInfo(Integer fileId) throws ApiException {
+    public ApiResponse<ModelFile> deleteFileByIdWithHttpInfo(@javax.annotation.Nonnull Integer fileId) throws ApiException {
         okhttp3.Call localVarCall = deleteFileByIdValidateBeforeCall(fileId, null);
         Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -195,7 +195,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> File deleted successfully. The response will contain the metadata for the deleted file (but not the content). </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFileByIdAsync(Integer fileId, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call deleteFileByIdAsync(@javax.annotation.Nonnull Integer fileId, final ApiCallback<ModelFile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFileByIdValidateBeforeCall(fileId, _callback);
         Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
@@ -217,7 +217,7 @@ public class FilesApi {
         <tr><td> 410 </td><td> Resource has expired </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFileByIdCall(Integer fileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFileByIdCall(@javax.annotation.Nonnull Integer fileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -263,7 +263,7 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFileByIdValidateBeforeCall(Integer fileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFileByIdValidateBeforeCall(@javax.annotation.Nonnull Integer fileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling getFileById(Async)");
@@ -288,7 +288,7 @@ public class FilesApi {
         <tr><td> 410 </td><td> Resource has expired </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile getFileById(Integer fileId) throws ApiException {
+    public ModelFile getFileById(@javax.annotation.Nonnull Integer fileId) throws ApiException {
         ApiResponse<ModelFile> localVarResp = getFileByIdWithHttpInfo(fileId);
         return localVarResp.getData();
     }
@@ -308,7 +308,7 @@ public class FilesApi {
         <tr><td> 410 </td><td> Resource has expired </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> getFileByIdWithHttpInfo(Integer fileId) throws ApiException {
+    public ApiResponse<ModelFile> getFileByIdWithHttpInfo(@javax.annotation.Nonnull Integer fileId) throws ApiException {
         okhttp3.Call localVarCall = getFileByIdValidateBeforeCall(fileId, null);
         Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -330,7 +330,7 @@ public class FilesApi {
         <tr><td> 410 </td><td> Resource has expired </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFileByIdAsync(Integer fileId, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call getFileByIdAsync(@javax.annotation.Nonnull Integer fileId, final ApiCallback<ModelFile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFileByIdValidateBeforeCall(fileId, _callback);
         Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
@@ -352,7 +352,7 @@ public class FilesApi {
         <tr><td> 307 </td><td> Instruct your client code to follow the redirect link specified in the &#x60;Location&#x60; header of the response in order to download the file:  &#x60;&#x60;&#x60; HTTP/1.1 307 Temporary Redirect Content-Length: 0 Location: https://someotherlocation.com/file Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: application/json; charset&#x3D;utf-8 &#x60;&#x60;&#x60;  ### When using cUrl  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFileContentByIdCall(Integer fileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFileContentByIdCall(@javax.annotation.Nonnull Integer fileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -398,7 +398,7 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFileContentByIdValidateBeforeCall(Integer fileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFileContentByIdValidateBeforeCall(@javax.annotation.Nonnull Integer fileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fileId' is set
         if (fileId == null) {
             throw new ApiException("Missing the required parameter 'fileId' when calling getFileContentById(Async)");
@@ -423,7 +423,7 @@ public class FilesApi {
         <tr><td> 307 </td><td> Instruct your client code to follow the redirect link specified in the &#x60;Location&#x60; header of the response in order to download the file:  &#x60;&#x60;&#x60; HTTP/1.1 307 Temporary Redirect Content-Length: 0 Location: https://someotherlocation.com/file Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: application/json; charset&#x3D;utf-8 &#x60;&#x60;&#x60;  ### When using cUrl  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public File getFileContentById(Integer fileId) throws ApiException {
+    public File getFileContentById(@javax.annotation.Nonnull Integer fileId) throws ApiException {
         ApiResponse<File> localVarResp = getFileContentByIdWithHttpInfo(fileId);
         return localVarResp.getData();
     }
@@ -443,7 +443,7 @@ public class FilesApi {
         <tr><td> 307 </td><td> Instruct your client code to follow the redirect link specified in the &#x60;Location&#x60; header of the response in order to download the file:  &#x60;&#x60;&#x60; HTTP/1.1 307 Temporary Redirect Content-Length: 0 Location: https://someotherlocation.com/file Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: application/json; charset&#x3D;utf-8 &#x60;&#x60;&#x60;  ### When using cUrl  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> getFileContentByIdWithHttpInfo(Integer fileId) throws ApiException {
+    public ApiResponse<File> getFileContentByIdWithHttpInfo(@javax.annotation.Nonnull Integer fileId) throws ApiException {
         okhttp3.Call localVarCall = getFileContentByIdValidateBeforeCall(fileId, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -465,7 +465,7 @@ public class FilesApi {
         <tr><td> 307 </td><td> Instruct your client code to follow the redirect link specified in the &#x60;Location&#x60; header of the response in order to download the file:  &#x60;&#x60;&#x60; HTTP/1.1 307 Temporary Redirect Content-Length: 0 Location: https://someotherlocation.com/file Zamzar-Test-Credits-Remaining: 97 Zamzar-Credits-Remaining: 343 Content-Type: application/json; charset&#x3D;utf-8 &#x60;&#x60;&#x60;  ### When using cUrl  Save the content of a file to disk using curl options &#x60;-L&#x60; (follow redirects), &#x60;-O&#x60; (Write output to a local file) and &#x60;-J&#x60; (use the server-specified Content-Disposition filename). Or specify your own filename by redirecting the output of your HTTP call:  &#x60;&#x60;&#x60;shell curl --request GET \\   --url https://api.zamzar.com/v1/files/123456/content \\   --header &#39;Authorization: Basic xxxxxx&#39; \\   --header &#39;Content-Type: application/json&#39; -L \\  -L  -O \\  -J   &gt; converted.png &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFileContentByIdAsync(Integer fileId, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call getFileContentByIdAsync(@javax.annotation.Nonnull Integer fileId, final ApiCallback<File> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFileContentByIdValidateBeforeCall(fileId, _callback);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
@@ -487,7 +487,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call listFilesCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listFilesCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -544,7 +544,7 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listFilesValidateBeforeCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listFilesValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         return listFilesCall(limit, after, before, _callback);
 
     }
@@ -564,7 +564,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
      */
-    public Files listFiles(Integer limit, Integer after, Integer before) throws ApiException {
+    public Files listFiles(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         ApiResponse<Files> localVarResp = listFilesWithHttpInfo(limit, after, before);
         return localVarResp.getData();
     }
@@ -584,7 +584,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<Files> listFilesWithHttpInfo(Integer limit, Integer after, Integer before) throws ApiException {
+    public ApiResponse<Files> listFilesWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         okhttp3.Call localVarCall = listFilesValidateBeforeCall(limit, after, before, null);
         Type localVarReturnType = new TypeToken<Files>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -606,7 +606,7 @@ public class FilesApi {
         <tr><td> 200 </td><td> A list of source and associated target (converted) files within the &#x60;data&#x60; array. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call listFilesAsync(Integer limit, Integer after, Integer before, final ApiCallback<Files> _callback) throws ApiException {
+    public okhttp3.Call listFilesAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback<Files> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listFilesValidateBeforeCall(limit, after, before, _callback);
         Type localVarReturnType = new TypeToken<Files>(){}.getType();
@@ -627,7 +627,7 @@ public class FilesApi {
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadFileCall(File content, String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadFileCall(@javax.annotation.Nullable File content, @javax.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -681,7 +681,7 @@ public class FilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadFileValidateBeforeCall(File content, String name, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadFileValidateBeforeCall(@javax.annotation.Nullable File content, @javax.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
         return uploadFileCall(content, name, _callback);
 
     }
@@ -700,7 +700,7 @@ public class FilesApi {
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ModelFile uploadFile(File content, String name) throws ApiException {
+    public ModelFile uploadFile(@javax.annotation.Nullable File content, @javax.annotation.Nullable String name) throws ApiException {
         ApiResponse<ModelFile> localVarResp = uploadFileWithHttpInfo(content, name);
         return localVarResp.getData();
     }
@@ -719,7 +719,7 @@ public class FilesApi {
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelFile> uploadFileWithHttpInfo(File content, String name) throws ApiException {
+    public ApiResponse<ModelFile> uploadFileWithHttpInfo(@javax.annotation.Nullable File content, @javax.annotation.Nullable String name) throws ApiException {
         okhttp3.Call localVarCall = uploadFileValidateBeforeCall(content, name, null);
         Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -740,7 +740,7 @@ public class FilesApi {
         <tr><td> 201 </td><td> File uploaded successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadFileAsync(File content, String name, final ApiCallback<ModelFile> _callback) throws ApiException {
+    public okhttp3.Call uploadFileAsync(@javax.annotation.Nullable File content, @javax.annotation.Nullable String name, final ApiCallback<ModelFile> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadFileValidateBeforeCall(content, name, _callback);
         Type localVarReturnType = new TypeToken<ModelFile>(){}.getType();

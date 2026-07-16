@@ -86,7 +86,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Job cancelled successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelJobByIdCall(Integer jobId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelJobByIdCall(@javax.annotation.Nonnull Integer jobId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -132,7 +132,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelJobByIdValidateBeforeCall(Integer jobId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelJobByIdValidateBeforeCall(@javax.annotation.Nonnull Integer jobId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'jobId' is set
         if (jobId == null) {
             throw new ApiException("Missing the required parameter 'jobId' when calling cancelJobById(Async)");
@@ -155,7 +155,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Job cancelled successfully </td><td>  -  </td></tr>
      </table>
      */
-    public Job cancelJobById(Integer jobId) throws ApiException {
+    public Job cancelJobById(@javax.annotation.Nonnull Integer jobId) throws ApiException {
         ApiResponse<Job> localVarResp = cancelJobByIdWithHttpInfo(jobId);
         return localVarResp.getData();
     }
@@ -173,7 +173,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Job cancelled successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Job> cancelJobByIdWithHttpInfo(Integer jobId) throws ApiException {
+    public ApiResponse<Job> cancelJobByIdWithHttpInfo(@javax.annotation.Nonnull Integer jobId) throws ApiException {
         okhttp3.Call localVarCall = cancelJobByIdValidateBeforeCall(jobId, null);
         Type localVarReturnType = new TypeToken<Job>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -193,7 +193,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Job cancelled successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelJobByIdAsync(Integer jobId, final ApiCallback<Job> _callback) throws ApiException {
+    public okhttp3.Call cancelJobByIdAsync(@javax.annotation.Nonnull Integer jobId, final ApiCallback<Job> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = cancelJobByIdValidateBeforeCall(jobId, _callback);
         Type localVarReturnType = new TypeToken<Job>(){}.getType();
@@ -213,7 +213,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Information about a specific job </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getJobByIdCall(Integer jobId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getJobByIdCall(@javax.annotation.Nonnull Integer jobId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -259,7 +259,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getJobByIdValidateBeforeCall(Integer jobId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getJobByIdValidateBeforeCall(@javax.annotation.Nonnull Integer jobId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'jobId' is set
         if (jobId == null) {
             throw new ApiException("Missing the required parameter 'jobId' when calling getJobById(Async)");
@@ -282,7 +282,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Information about a specific job </td><td>  -  </td></tr>
      </table>
      */
-    public Job getJobById(Integer jobId) throws ApiException {
+    public Job getJobById(@javax.annotation.Nonnull Integer jobId) throws ApiException {
         ApiResponse<Job> localVarResp = getJobByIdWithHttpInfo(jobId);
         return localVarResp.getData();
     }
@@ -300,7 +300,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Information about a specific job </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Job> getJobByIdWithHttpInfo(Integer jobId) throws ApiException {
+    public ApiResponse<Job> getJobByIdWithHttpInfo(@javax.annotation.Nonnull Integer jobId) throws ApiException {
         okhttp3.Call localVarCall = getJobByIdValidateBeforeCall(jobId, null);
         Type localVarReturnType = new TypeToken<Job>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -320,7 +320,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> Information about a specific job </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getJobByIdAsync(Integer jobId, final ApiCallback<Job> _callback) throws ApiException {
+    public okhttp3.Call getJobByIdAsync(@javax.annotation.Nonnull Integer jobId, final ApiCallback<Job> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getJobByIdValidateBeforeCall(jobId, _callback);
         Type localVarReturnType = new TypeToken<Job>(){}.getType();
@@ -342,7 +342,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listJobsCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listJobsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -399,7 +399,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listJobsValidateBeforeCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listJobsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         return listJobsCall(limit, after, before, _callback);
 
     }
@@ -419,7 +419,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public Jobs listJobs(Integer limit, Integer after, Integer before) throws ApiException {
+    public Jobs listJobs(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         ApiResponse<Jobs> localVarResp = listJobsWithHttpInfo(limit, after, before);
         return localVarResp.getData();
     }
@@ -439,7 +439,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Jobs> listJobsWithHttpInfo(Integer limit, Integer after, Integer before) throws ApiException {
+    public ApiResponse<Jobs> listJobsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         okhttp3.Call localVarCall = listJobsValidateBeforeCall(limit, after, before, null);
         Type localVarReturnType = new TypeToken<Jobs>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -461,7 +461,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listJobsAsync(Integer limit, Integer after, Integer before, final ApiCallback<Jobs> _callback) throws ApiException {
+    public okhttp3.Call listJobsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback<Jobs> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listJobsValidateBeforeCall(limit, after, before, _callback);
         Type localVarReturnType = new TypeToken<Jobs>(){}.getType();
@@ -483,7 +483,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all successful jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSuccessfulJobsCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSuccessfulJobsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -540,7 +540,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSuccessfulJobsValidateBeforeCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSuccessfulJobsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         return listSuccessfulJobsCall(limit, after, before, _callback);
 
     }
@@ -560,7 +560,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all successful jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public Jobs listSuccessfulJobs(Integer limit, Integer after, Integer before) throws ApiException {
+    public Jobs listSuccessfulJobs(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         ApiResponse<Jobs> localVarResp = listSuccessfulJobsWithHttpInfo(limit, after, before);
         return localVarResp.getData();
     }
@@ -580,7 +580,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all successful jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Jobs> listSuccessfulJobsWithHttpInfo(Integer limit, Integer after, Integer before) throws ApiException {
+    public ApiResponse<Jobs> listSuccessfulJobsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         okhttp3.Call localVarCall = listSuccessfulJobsValidateBeforeCall(limit, after, before, null);
         Type localVarReturnType = new TypeToken<Jobs>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -602,7 +602,7 @@ public class JobsApi {
         <tr><td> 200 </td><td> A list of all successful jobs. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSuccessfulJobsAsync(Integer limit, Integer after, Integer before, final ApiCallback<Jobs> _callback) throws ApiException {
+    public okhttp3.Call listSuccessfulJobsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback<Jobs> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSuccessfulJobsValidateBeforeCall(limit, after, before, _callback);
         Type localVarReturnType = new TypeToken<Jobs>(){}.getType();
@@ -626,7 +626,7 @@ public class JobsApi {
         <tr><td> 201 </td><td> Job submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call submitJobCall(Integer sourceFile, String targetFormat, String sourceFormat, String exportUrl, Map<String, Object> options, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call submitJobCall(@javax.annotation.Nullable Integer sourceFile, @javax.annotation.Nullable String targetFormat, @javax.annotation.Nullable String sourceFormat, @javax.annotation.Nullable String exportUrl, @javax.annotation.Nullable Map<String, Object> options, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -692,7 +692,7 @@ public class JobsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call submitJobValidateBeforeCall(Integer sourceFile, String targetFormat, String sourceFormat, String exportUrl, Map<String, Object> options, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call submitJobValidateBeforeCall(@javax.annotation.Nullable Integer sourceFile, @javax.annotation.Nullable String targetFormat, @javax.annotation.Nullable String sourceFormat, @javax.annotation.Nullable String exportUrl, @javax.annotation.Nullable Map<String, Object> options, final ApiCallback _callback) throws ApiException {
         return submitJobCall(sourceFile, targetFormat, sourceFormat, exportUrl, options, _callback);
 
     }
@@ -714,7 +714,7 @@ public class JobsApi {
         <tr><td> 201 </td><td> Job submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public Job submitJob(Integer sourceFile, String targetFormat, String sourceFormat, String exportUrl, Map<String, Object> options) throws ApiException {
+    public Job submitJob(@javax.annotation.Nullable Integer sourceFile, @javax.annotation.Nullable String targetFormat, @javax.annotation.Nullable String sourceFormat, @javax.annotation.Nullable String exportUrl, @javax.annotation.Nullable Map<String, Object> options) throws ApiException {
         ApiResponse<Job> localVarResp = submitJobWithHttpInfo(sourceFile, targetFormat, sourceFormat, exportUrl, options);
         return localVarResp.getData();
     }
@@ -736,7 +736,7 @@ public class JobsApi {
         <tr><td> 201 </td><td> Job submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Job> submitJobWithHttpInfo(Integer sourceFile, String targetFormat, String sourceFormat, String exportUrl, Map<String, Object> options) throws ApiException {
+    public ApiResponse<Job> submitJobWithHttpInfo(@javax.annotation.Nullable Integer sourceFile, @javax.annotation.Nullable String targetFormat, @javax.annotation.Nullable String sourceFormat, @javax.annotation.Nullable String exportUrl, @javax.annotation.Nullable Map<String, Object> options) throws ApiException {
         okhttp3.Call localVarCall = submitJobValidateBeforeCall(sourceFile, targetFormat, sourceFormat, exportUrl, options, null);
         Type localVarReturnType = new TypeToken<Job>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -760,7 +760,7 @@ public class JobsApi {
         <tr><td> 201 </td><td> Job submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call submitJobAsync(Integer sourceFile, String targetFormat, String sourceFormat, String exportUrl, Map<String, Object> options, final ApiCallback<Job> _callback) throws ApiException {
+    public okhttp3.Call submitJobAsync(@javax.annotation.Nullable Integer sourceFile, @javax.annotation.Nullable String targetFormat, @javax.annotation.Nullable String sourceFormat, @javax.annotation.Nullable String exportUrl, @javax.annotation.Nullable Map<String, Object> options, final ApiCallback<Job> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = submitJobValidateBeforeCall(sourceFile, targetFormat, sourceFormat, exportUrl, options, _callback);
         Type localVarReturnType = new TypeToken<Job>(){}.getType();

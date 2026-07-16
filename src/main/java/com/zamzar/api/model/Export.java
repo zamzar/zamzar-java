@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * An object representing the process of copying converted files to the location specified in the &#x60;export_url&#x60; (when submitting a job via the &#x60;/jobs&#x60; endpoint). The &#x60;status&#x60; will be set to &#x60;initialising&#x60; or &#x60;successful&#x60;.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Export {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

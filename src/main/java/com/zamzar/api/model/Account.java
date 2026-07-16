@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Your current subscription plan and the number of conversions that you have remaining in this billing period.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Account {
   public static final String SERIALIZED_NAME_TEST_CREDITS_REMAINING = "test_credits_remaining";
   @SerializedName(SERIALIZED_NAME_TEST_CREDITS_REMAINING)
