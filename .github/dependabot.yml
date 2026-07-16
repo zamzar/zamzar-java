@@ -9,6 +9,16 @@ updates:
       interval: "daily"
     cooldown:
       default-days: 7
+    ignore:
+      # Ignore OkHttp 5.x and later until the upstream code generator supports it
+      # see: https://github.com/OpenAPITools/openapi-generator/blob/8f78b1284d7a23795a9afe60caf1923ad9f53bc4/modules/openapi-generator/src/main/resources/Java/libraries/okhttp-gson/pom.mustache#L415
+      - dependency-name: "com.squareup.okhttp3:okhttp"
+        versions:
+          - "[5.0,)"
+      - dependency-name: "com.squareup.okhttp3:logging-interceptor"
+        versions:
+          - "[5.0,)"
+
   - package-ecosystem: "docker-compose"
     directory: "/"
     schedule:
