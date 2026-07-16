@@ -50,7 +50,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents a file which has been uploaded, imported or converted.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ModelFile {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -84,10 +84,10 @@ public class ModelFile {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier assigned to the file
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getId() {
     return id;
@@ -103,10 +103,10 @@ public class ModelFile {
     return this;
   }
 
-   /**
+  /**
    * The API key which was used to create the file
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
@@ -122,10 +122,10 @@ public class ModelFile {
     return this;
   }
 
-   /**
+  /**
    * The name that was specified for the file (must not be more than 256 chars)
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -141,10 +141,10 @@ public class ModelFile {
     return this;
   }
 
-   /**
+  /**
    * The size of the file in bytes, derived from the content of the file
    * @return size
-  **/
+   */
   @javax.annotation.Nullable
   public Long getSize() {
     return size;
@@ -160,10 +160,10 @@ public class ModelFile {
     return this;
   }
 
-   /**
+  /**
    * The identifier of the format of the file
    * @return format
-  **/
+   */
   @javax.annotation.Nullable
   public String getFormat() {
     return format;
@@ -179,10 +179,10 @@ public class ModelFile {
     return this;
   }
 
-   /**
+  /**
    * The time at which the file was created on Zamzar servers ((UTC in [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)))
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -261,12 +261,12 @@ public class ModelFile {
     openapiRequiredFields.add("name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ModelFile
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ModelFile
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelFile.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -329,22 +329,22 @@ public class ModelFile {
     }
   }
 
- /**
-  * Create an instance of ModelFile given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ModelFile
-  * @throws IOException if the JSON string is invalid with respect to ModelFile
-  */
+  /**
+   * Create an instance of ModelFile given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ModelFile
+   * @throws IOException if the JSON string is invalid with respect to ModelFile
+   */
   public static ModelFile fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ModelFile.class);
   }
 
- /**
-  * Convert an instance of ModelFile to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ModelFile to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * FormatTargetsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class FormatTargetsInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,10 +67,10 @@ public class FormatTargetsInner {
     return this;
   }
 
-   /**
+  /**
    * The name of the target format
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -86,10 +86,10 @@ public class FormatTargetsInner {
     return this;
   }
 
-   /**
+  /**
    * The number of base credits that are charged when scheduling a job for this conversion
    * @return creditCost
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getCreditCost() {
     return creditCost;
@@ -154,12 +154,12 @@ public class FormatTargetsInner {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FormatTargetsInner
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FormatTargetsInner
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FormatTargetsInner.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -209,22 +209,22 @@ public class FormatTargetsInner {
     }
   }
 
- /**
-  * Create an instance of FormatTargetsInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FormatTargetsInner
-  * @throws IOException if the JSON string is invalid with respect to FormatTargetsInner
-  */
+  /**
+   * Create an instance of FormatTargetsInner given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FormatTargetsInner
+   * @throws IOException if the JSON string is invalid with respect to FormatTargetsInner
+   */
   public static FormatTargetsInner fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FormatTargetsInner.class);
   }
 
- /**
-  * Convert an instance of FormatTargetsInner to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FormatTargetsInner to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

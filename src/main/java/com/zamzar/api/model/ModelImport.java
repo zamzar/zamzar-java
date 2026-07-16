@@ -53,7 +53,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents the process of copying a file from an external URL, (S)FTP server, or an Amazon S3 bucket.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ModelImport {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -151,10 +151,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier assigned to the import
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getId() {
     return id;
@@ -170,10 +170,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The API key used to create the import.
    * @return key
-  **/
+   */
   @javax.annotation.Nullable
   public String getKey() {
     return key;
@@ -189,10 +189,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The URL to the file being imported.
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
@@ -208,10 +208,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The current status of the import
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
@@ -227,10 +227,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * Get failure
    * @return failure
-  **/
+   */
   @javax.annotation.Nullable
   public Failure getFailure() {
     return failure;
@@ -246,10 +246,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * Get _file
    * @return _file
-  **/
+   */
   @javax.annotation.Nullable
   public ModelFile getFile() {
     return _file;
@@ -265,10 +265,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The time at which the import was created on Zamzar servers ((UTC in [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)))
    * @return createdAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
@@ -284,10 +284,10 @@ public class ModelImport {
     return this;
   }
 
-   /**
+  /**
    * The time at which the import finished if successful, or null otherwise ((UTC in [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)))
    * @return finishedAt
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getFinishedAt() {
     return finishedAt;
@@ -382,12 +382,12 @@ public class ModelImport {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ModelImport
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ModelImport
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModelImport.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -462,22 +462,22 @@ public class ModelImport {
     }
   }
 
- /**
-  * Create an instance of ModelImport given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ModelImport
-  * @throws IOException if the JSON string is invalid with respect to ModelImport
-  */
+  /**
+   * Create an instance of ModelImport given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ModelImport
+   * @throws IOException if the JSON string is invalid with respect to ModelImport
+   */
   public static ModelImport fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ModelImport.class);
   }
 
- /**
-  * Convert an instance of ModelImport to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ModelImport to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

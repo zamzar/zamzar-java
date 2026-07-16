@@ -50,7 +50,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * An object representing the process of copying converted files to the location specified in the &#x60;export_url&#x60; (when submitting a job via the &#x60;/jobs&#x60; endpoint). The &#x60;status&#x60; will be set to &#x60;initialising&#x60; or &#x60;successful&#x60;.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Export {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -132,10 +132,10 @@ public class Export {
     return this;
   }
 
-   /**
+  /**
    * The unique identifier assigned to the export
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getId() {
     return id;
@@ -151,10 +151,10 @@ public class Export {
     return this;
   }
 
-   /**
+  /**
    * The URL of the resulting (exported) file
    * @return url
-  **/
+   */
   @javax.annotation.Nullable
   public String getUrl() {
     return url;
@@ -170,10 +170,10 @@ public class Export {
     return this;
   }
 
-   /**
+  /**
    * The current status of the export
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
@@ -189,10 +189,10 @@ public class Export {
     return this;
   }
 
-   /**
+  /**
    * Get failure
    * @return failure
-  **/
+   */
   @javax.annotation.Nullable
   public Failure getFailure() {
     return failure;
@@ -264,12 +264,12 @@ public class Export {
     openapiRequiredFields.add("id");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Export
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Export
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Export.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -337,22 +337,22 @@ public class Export {
     }
   }
 
- /**
-  * Create an instance of Export given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Export
-  * @throws IOException if the JSON string is invalid with respect to Export
-  */
+  /**
+   * Create an instance of Export given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Export
+   * @throws IOException if the JSON string is invalid with respect to Export
+   */
   public static Export fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Export.class);
   }
 
- /**
-  * Convert an instance of Export to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Export to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

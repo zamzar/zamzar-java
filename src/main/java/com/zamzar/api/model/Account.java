@@ -50,7 +50,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Your current subscription plan and the number of conversions that you have remaining in this billing period.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Account {
   public static final String SERIALIZED_NAME_TEST_CREDITS_REMAINING = "test_credits_remaining";
   @SerializedName(SERIALIZED_NAME_TEST_CREDITS_REMAINING)
@@ -72,10 +72,10 @@ public class Account {
     return this;
   }
 
-   /**
+  /**
    * The number of test conversion credits remaining in this billing period (free)
    * @return testCreditsRemaining
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTestCreditsRemaining() {
     return testCreditsRemaining;
@@ -91,10 +91,10 @@ public class Account {
     return this;
   }
 
-   /**
+  /**
    * The number of conversion credits remaining in this billing period (included as part of your plan)
    * @return creditsRemaining
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getCreditsRemaining() {
     return creditsRemaining;
@@ -110,10 +110,10 @@ public class Account {
     return this;
   }
 
-   /**
+  /**
    * Get plan
    * @return plan
-  **/
+   */
   @javax.annotation.Nullable
   public AccountPlan getPlan() {
     return plan;
@@ -181,12 +181,12 @@ public class Account {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Account
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Account
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Account.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -237,22 +237,22 @@ public class Account {
     }
   }
 
- /**
-  * Create an instance of Account given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Account
-  * @throws IOException if the JSON string is invalid with respect to Account
-  */
+  /**
+   * Create an instance of Account given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Account
+   * @throws IOException if the JSON string is invalid with respect to Account
+   */
   public static Account fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Account.class);
   }
 
- /**
-  * Convert an instance of Account to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Account to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

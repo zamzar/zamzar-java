@@ -53,7 +53,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of formats listed in alphabetical order. The &#x60;targets&#x60; array represent the formats which the source format &#x60;name&#x60; can be converted to and the associated cost (in credits).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Formats {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
@@ -71,10 +71,10 @@ public class Formats {
     return this;
   }
 
-   /**
+  /**
    * Get paging
    * @return paging
-  **/
+   */
   @javax.annotation.Nullable
   public PagingString getPaging() {
     return paging;
@@ -98,10 +98,10 @@ public class Formats {
     return this;
   }
 
-   /**
+  /**
    * An array of source and target formats ordered alphabetically.
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
   public List<Format> getData() {
     return data;
@@ -166,12 +166,12 @@ public class Formats {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Formats
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Formats
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Formats.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -236,22 +236,22 @@ public class Formats {
     }
   }
 
- /**
-  * Create an instance of Formats given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Formats
-  * @throws IOException if the JSON string is invalid with respect to Formats
-  */
+  /**
+   * Create an instance of Formats given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Formats
+   * @throws IOException if the JSON string is invalid with respect to Formats
+   */
   public static Formats fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Formats.class);
   }
 
- /**
-  * Convert an instance of Formats to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Formats to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

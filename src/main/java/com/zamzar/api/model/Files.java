@@ -53,7 +53,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of files. Newer files appear before older files. Expired files are not included.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class Files {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -79,10 +79,10 @@ public class Files {
     return this;
   }
 
-   /**
+  /**
    * An array of file objects
    * @return data
-  **/
+   */
   @javax.annotation.Nullable
   public List<ModelFile> getData() {
     return data;
@@ -98,10 +98,10 @@ public class Files {
     return this;
   }
 
-   /**
+  /**
    * Get paging
    * @return paging
-  **/
+   */
   @javax.annotation.Nullable
   public PagingNumeric getPaging() {
     return paging;
@@ -166,12 +166,12 @@ public class Files {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Files
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Files
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Files.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -236,22 +236,22 @@ public class Files {
     }
   }
 
- /**
-  * Create an instance of Files given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Files
-  * @throws IOException if the JSON string is invalid with respect to Files
-  */
+  /**
+   * Create an instance of Files given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Files
+   * @throws IOException if the JSON string is invalid with respect to Files
+   */
   public static Files fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Files.class);
   }
 
- /**
-  * Convert an instance of Files to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Files to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

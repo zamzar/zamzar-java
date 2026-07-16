@@ -49,7 +49,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Further information about the cause of the error (only included for some error codes)
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
 public class ErrorContext {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -67,10 +67,10 @@ public class ErrorContext {
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @javax.annotation.Nullable
   public String getDescription() {
     return description;
@@ -86,10 +86,10 @@ public class ErrorContext {
     return this;
   }
 
-   /**
+  /**
    * Get value
    * @return value
-  **/
+   */
   @javax.annotation.Nullable
   public String getValue() {
     return value;
@@ -154,12 +154,12 @@ public class ErrorContext {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ErrorContext
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ErrorContext
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorContext.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -212,22 +212,22 @@ public class ErrorContext {
     }
   }
 
- /**
-  * Create an instance of ErrorContext given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ErrorContext
-  * @throws IOException if the JSON string is invalid with respect to ErrorContext
-  */
+  /**
+   * Create an instance of ErrorContext given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ErrorContext
+   * @throws IOException if the JSON string is invalid with respect to ErrorContext
+   */
   public static ErrorContext fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorContext.class);
   }
 
- /**
-  * Convert an instance of ErrorContext to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ErrorContext to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
