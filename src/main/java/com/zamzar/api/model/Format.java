@@ -52,7 +52,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents the source format and an array of valid target formats.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Format {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -60,7 +60,7 @@ public class Format {
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
   @SerializedName(SERIALIZED_NAME_TARGETS)
-  private List<FormatTargetsInner> targets;
+  private List<FormatTargetsInner> targets = new ArrayList<>();
 
   public Format() {
   }

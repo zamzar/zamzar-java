@@ -50,7 +50,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * An error object containing a message, code and context. Returned within an array of &#x60;errors&#x60; when a response contains a &#x60;4xx&#x60; or &#x60;5xx&#x60; code.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Error {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
