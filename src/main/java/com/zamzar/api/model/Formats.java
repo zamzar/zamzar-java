@@ -53,7 +53,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of formats listed in alphabetical order. The &#x60;targets&#x60; array represent the formats which the source format &#x60;name&#x60; can be converted to and the associated cost (in credits).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Formats {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
@@ -61,7 +61,7 @@ public class Formats {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<Format> data;
+  private List<Format> data = new ArrayList<>();
 
   public Formats() {
   }

@@ -53,7 +53,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of import objects. Newer imports appear before older imports.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Imports {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
@@ -61,7 +61,7 @@ public class Imports {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<ModelImport> data;
+  private List<ModelImport> data = new ArrayList<>();
 
   public Imports() {
   }

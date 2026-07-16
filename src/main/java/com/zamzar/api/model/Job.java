@@ -59,7 +59,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents the process of converting a file to another format.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -157,7 +157,7 @@ public class Job {
 
   public static final String SERIALIZED_NAME_TARGET_FILES = "target_files";
   @SerializedName(SERIALIZED_NAME_TARGET_FILES)
-  private List<ModelFile> targetFiles;
+  private List<ModelFile> targetFiles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TARGET_FORMAT = "target_format";
   @SerializedName(SERIALIZED_NAME_TARGET_FORMAT)
@@ -173,7 +173,7 @@ public class Job {
 
   public static final String SERIALIZED_NAME_EXPORTS = "exports";
   @SerializedName(SERIALIZED_NAME_EXPORTS)
-  private List<Export> exports;
+  private List<Export> exports = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
