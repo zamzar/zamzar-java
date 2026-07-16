@@ -87,7 +87,7 @@ public class FormatsApi {
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFormatByIdCall(String format, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFormatByIdCall(@javax.annotation.Nonnull String format, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,7 +133,7 @@ public class FormatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFormatByIdValidateBeforeCall(String format, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFormatByIdValidateBeforeCall(@javax.annotation.Nonnull String format, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'format' is set
         if (format == null) {
             throw new ApiException("Missing the required parameter 'format' when calling getFormatById(Async)");
@@ -157,7 +157,7 @@ public class FormatsApi {
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
      </table>
      */
-    public Format getFormatById(String format) throws ApiException {
+    public Format getFormatById(@javax.annotation.Nonnull String format) throws ApiException {
         ApiResponse<Format> localVarResp = getFormatByIdWithHttpInfo(format);
         return localVarResp.getData();
     }
@@ -176,7 +176,7 @@ public class FormatsApi {
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Format> getFormatByIdWithHttpInfo(String format) throws ApiException {
+    public ApiResponse<Format> getFormatByIdWithHttpInfo(@javax.annotation.Nonnull String format) throws ApiException {
         okhttp3.Call localVarCall = getFormatByIdValidateBeforeCall(format, null);
         Type localVarReturnType = new TypeToken<Format>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -197,7 +197,7 @@ public class FormatsApi {
         <tr><td> 404 </td><td> Unsupported Format. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFormatByIdAsync(String format, final ApiCallback<Format> _callback) throws ApiException {
+    public okhttp3.Call getFormatByIdAsync(@javax.annotation.Nonnull String format, final ApiCallback<Format> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFormatByIdValidateBeforeCall(format, _callback);
         Type localVarReturnType = new TypeToken<Format>(){}.getType();
@@ -219,7 +219,7 @@ public class FormatsApi {
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listFormatsCall(Integer limit, String after, String before, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listFormatsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -276,7 +276,7 @@ public class FormatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listFormatsValidateBeforeCall(Integer limit, String after, String before, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listFormatsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback _callback) throws ApiException {
         return listFormatsCall(limit, after, before, _callback);
 
     }
@@ -296,7 +296,7 @@ public class FormatsApi {
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public Formats listFormats(Integer limit, String after, String before) throws ApiException {
+    public Formats listFormats(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before) throws ApiException {
         ApiResponse<Formats> localVarResp = listFormatsWithHttpInfo(limit, after, before);
         return localVarResp.getData();
     }
@@ -316,7 +316,7 @@ public class FormatsApi {
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Formats> listFormatsWithHttpInfo(Integer limit, String after, String before) throws ApiException {
+    public ApiResponse<Formats> listFormatsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before) throws ApiException {
         okhttp3.Call localVarCall = listFormatsValidateBeforeCall(limit, after, before, null);
         Type localVarReturnType = new TypeToken<Formats>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -338,7 +338,7 @@ public class FormatsApi {
         <tr><td> 200 </td><td> Source formats are ordered alphabetically within the &#x60;data&#x60; array of formats and include the target formats and associated cost of conversion.  A &#x60;paging&#x60; object is included within the results, with each page having a limit of 50 records by default. Request the next page by using the &#x60;after&#x60; parameter in reference to the &#x60;last&#x60; property within the paging object of the current response.  For example to retrieve the next page of formats after the &#x60;msg&#x60; format:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg &#x60;&#x60;&#x60;  To limit the results to 10 records:  &#x60;&#x60;&#x60; https://api.zamzar.com/v1/formats/?after&#x3D;msg&amp;limit&#x3D;10 &#x60;&#x60;&#x60; </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listFormatsAsync(Integer limit, String after, String before, final ApiCallback<Formats> _callback) throws ApiException {
+    public okhttp3.Call listFormatsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String after, @javax.annotation.Nullable String before, final ApiCallback<Formats> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listFormatsValidateBeforeCall(limit, after, before, _callback);
         Type localVarReturnType = new TypeToken<Formats>(){}.getType();

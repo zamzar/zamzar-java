@@ -48,7 +48,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * When you request a list of of all resources of any type (files, formats, jobs), you will receive a paged collection as a response. A paged collection allows you to view a subset of the entire collection (limited to 50 elements) and makes it easy to implement pagination in your application. Use the &#x60;limit&#x60; parameter to limit the number of results and the &#x60;after&#x60; parameter to request the next page of results (based on the value of &#x60;last&#x60; within the paging object).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class PagingString {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)

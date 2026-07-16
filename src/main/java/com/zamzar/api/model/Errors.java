@@ -51,7 +51,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * When a response contains a &#x60;4xx&#x60; or &#x60;5xx&#x60; response code, the body of the request will contain one or more error objects. Problems
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.13.0")
 public class Errors {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)

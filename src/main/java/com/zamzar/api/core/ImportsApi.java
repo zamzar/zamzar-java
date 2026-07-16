@@ -86,7 +86,7 @@ public class ImportsApi {
         <tr><td> 200 </td><td> Information about a specific import </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImportByIdCall(Integer importId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getImportByIdCall(@javax.annotation.Nonnull Integer importId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -132,7 +132,7 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getImportByIdValidateBeforeCall(Integer importId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getImportByIdValidateBeforeCall(@javax.annotation.Nonnull Integer importId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'importId' is set
         if (importId == null) {
             throw new ApiException("Missing the required parameter 'importId' when calling getImportById(Async)");
@@ -155,7 +155,7 @@ public class ImportsApi {
         <tr><td> 200 </td><td> Information about a specific import </td><td>  -  </td></tr>
      </table>
      */
-    public ModelImport getImportById(Integer importId) throws ApiException {
+    public ModelImport getImportById(@javax.annotation.Nonnull Integer importId) throws ApiException {
         ApiResponse<ModelImport> localVarResp = getImportByIdWithHttpInfo(importId);
         return localVarResp.getData();
     }
@@ -173,7 +173,7 @@ public class ImportsApi {
         <tr><td> 200 </td><td> Information about a specific import </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelImport> getImportByIdWithHttpInfo(Integer importId) throws ApiException {
+    public ApiResponse<ModelImport> getImportByIdWithHttpInfo(@javax.annotation.Nonnull Integer importId) throws ApiException {
         okhttp3.Call localVarCall = getImportByIdValidateBeforeCall(importId, null);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -193,7 +193,7 @@ public class ImportsApi {
         <tr><td> 200 </td><td> Information about a specific import </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImportByIdAsync(Integer importId, final ApiCallback<ModelImport> _callback) throws ApiException {
+    public okhttp3.Call getImportByIdAsync(@javax.annotation.Nonnull Integer importId, final ApiCallback<ModelImport> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getImportByIdValidateBeforeCall(importId, _callback);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
@@ -216,7 +216,7 @@ public class ImportsApi {
         <tr><td> 504 </td><td> Gateway Timeout </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listImportsCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listImportsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -273,7 +273,7 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listImportsValidateBeforeCall(Integer limit, Integer after, Integer before, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listImportsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback _callback) throws ApiException {
         return listImportsCall(limit, after, before, _callback);
 
     }
@@ -294,7 +294,7 @@ public class ImportsApi {
         <tr><td> 504 </td><td> Gateway Timeout </td><td>  -  </td></tr>
      </table>
      */
-    public Imports listImports(Integer limit, Integer after, Integer before) throws ApiException {
+    public Imports listImports(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         ApiResponse<Imports> localVarResp = listImportsWithHttpInfo(limit, after, before);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class ImportsApi {
         <tr><td> 504 </td><td> Gateway Timeout </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Imports> listImportsWithHttpInfo(Integer limit, Integer after, Integer before) throws ApiException {
+    public ApiResponse<Imports> listImportsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before) throws ApiException {
         okhttp3.Call localVarCall = listImportsValidateBeforeCall(limit, after, before, null);
         Type localVarReturnType = new TypeToken<Imports>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -338,7 +338,7 @@ public class ImportsApi {
         <tr><td> 504 </td><td> Gateway Timeout </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listImportsAsync(Integer limit, Integer after, Integer before, final ApiCallback<Imports> _callback) throws ApiException {
+    public okhttp3.Call listImportsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer after, @javax.annotation.Nullable Integer before, final ApiCallback<Imports> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listImportsValidateBeforeCall(limit, after, before, _callback);
         Type localVarReturnType = new TypeToken<Imports>(){}.getType();
@@ -359,7 +359,7 @@ public class ImportsApi {
         <tr><td> 201 </td><td> Import submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call startImportCall(String url, String filename, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call startImportCall(@javax.annotation.Nonnull String url, @javax.annotation.Nullable String filename, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -413,7 +413,7 @@ public class ImportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call startImportValidateBeforeCall(String url, String filename, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call startImportValidateBeforeCall(@javax.annotation.Nonnull String url, @javax.annotation.Nullable String filename, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'url' is set
         if (url == null) {
             throw new ApiException("Missing the required parameter 'url' when calling startImport(Async)");
@@ -437,7 +437,7 @@ public class ImportsApi {
         <tr><td> 201 </td><td> Import submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ModelImport startImport(String url, String filename) throws ApiException {
+    public ModelImport startImport(@javax.annotation.Nonnull String url, @javax.annotation.Nullable String filename) throws ApiException {
         ApiResponse<ModelImport> localVarResp = startImportWithHttpInfo(url, filename);
         return localVarResp.getData();
     }
@@ -456,7 +456,7 @@ public class ImportsApi {
         <tr><td> 201 </td><td> Import submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ModelImport> startImportWithHttpInfo(String url, String filename) throws ApiException {
+    public ApiResponse<ModelImport> startImportWithHttpInfo(@javax.annotation.Nonnull String url, @javax.annotation.Nullable String filename) throws ApiException {
         okhttp3.Call localVarCall = startImportValidateBeforeCall(url, filename, null);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -477,7 +477,7 @@ public class ImportsApi {
         <tr><td> 201 </td><td> Import submitted successfully </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call startImportAsync(String url, String filename, final ApiCallback<ModelImport> _callback) throws ApiException {
+    public okhttp3.Call startImportAsync(@javax.annotation.Nonnull String url, @javax.annotation.Nullable String filename, final ApiCallback<ModelImport> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = startImportValidateBeforeCall(url, filename, _callback);
         Type localVarReturnType = new TypeToken<ModelImport>(){}.getType();
