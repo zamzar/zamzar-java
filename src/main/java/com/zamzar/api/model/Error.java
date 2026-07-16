@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,24 +49,27 @@ import com.zamzar.api.invoker.JSON;
 /**
  * An error object containing a message, code and context. Returned within an array of &#x60;errors&#x60; when a response contains a &#x60;4xx&#x60; or &#x60;5xx&#x60; code.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Error {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nullable
   private Integer code;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
+  @javax.annotation.Nullable
   private ErrorContext context;
 
   public Error() {
   }
 
-  public Error code(Integer code) {
+  public Error code(@javax.annotation.Nullable Integer code) {
     this.code = code;
     return this;
   }
@@ -81,12 +83,12 @@ public class Error {
     return code;
   }
 
-  public void setCode(Integer code) {
+  public void setCode(@javax.annotation.Nullable Integer code) {
     this.code = code;
   }
 
 
-  public Error message(String message) {
+  public Error message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -100,12 +102,12 @@ public class Error {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public Error context(ErrorContext context) {
+  public Error context(@javax.annotation.Nullable ErrorContext context) {
     this.context = context;
     return this;
   }
@@ -119,7 +121,7 @@ public class Error {
     return context;
   }
 
-  public void setContext(ErrorContext context) {
+  public void setContext(@javax.annotation.Nullable ErrorContext context) {
     this.context = context;
   }
 

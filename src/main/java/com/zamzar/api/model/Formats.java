@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,20 +52,22 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of formats listed in alphabetical order. The &#x60;targets&#x60; array represent the formats which the source format &#x60;name&#x60; can be converted to and the associated cost (in credits).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Formats {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
+  @javax.annotation.Nullable
   private PagingString paging;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private List<Format> data = new ArrayList<>();
 
   public Formats() {
   }
 
-  public Formats paging(PagingString paging) {
+  public Formats paging(@javax.annotation.Nullable PagingString paging) {
     this.paging = paging;
     return this;
   }
@@ -80,12 +81,12 @@ public class Formats {
     return paging;
   }
 
-  public void setPaging(PagingString paging) {
+  public void setPaging(@javax.annotation.Nullable PagingString paging) {
     this.paging = paging;
   }
 
 
-  public Formats data(List<Format> data) {
+  public Formats data(@javax.annotation.Nullable List<Format> data) {
     this.data = data;
     return this;
   }
@@ -107,7 +108,7 @@ public class Formats {
     return data;
   }
 
-  public void setData(List<Format> data) {
+  public void setData(@javax.annotation.Nullable List<Format> data) {
     this.data = data;
   }
 

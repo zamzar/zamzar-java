@@ -47,7 +47,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -59,14 +58,16 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents the process of converting a file to another format.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private Integer id;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   /**
@@ -129,60 +130,73 @@ public class Job {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_FAILURE = "failure";
   @SerializedName(SERIALIZED_NAME_FAILURE)
+  @javax.annotation.Nullable
   private Failure failure;
 
   public static final String SERIALIZED_NAME_SANDBOX = "sandbox";
   @SerializedName(SERIALIZED_NAME_SANDBOX)
+  @javax.annotation.Nullable
   private Boolean sandbox;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_FINISHED_AT = "finished_at";
   @SerializedName(SERIALIZED_NAME_FINISHED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime finishedAt;
 
   public static final String SERIALIZED_NAME_IMPORT = "import";
   @SerializedName(SERIALIZED_NAME_IMPORT)
+  @javax.annotation.Nullable
   private ModelImport _import;
 
   public static final String SERIALIZED_NAME_SOURCE_FILE = "source_file";
   @SerializedName(SERIALIZED_NAME_SOURCE_FILE)
+  @javax.annotation.Nullable
   private ModelFile sourceFile;
 
   public static final String SERIALIZED_NAME_TARGET_FILES = "target_files";
   @SerializedName(SERIALIZED_NAME_TARGET_FILES)
+  @javax.annotation.Nullable
   private List<ModelFile> targetFiles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TARGET_FORMAT = "target_format";
   @SerializedName(SERIALIZED_NAME_TARGET_FORMAT)
+  @javax.annotation.Nullable
   private String targetFormat;
 
   public static final String SERIALIZED_NAME_CREDIT_COST = "credit_cost";
   @SerializedName(SERIALIZED_NAME_CREDIT_COST)
+  @javax.annotation.Nullable
   private Integer creditCost;
 
   public static final String SERIALIZED_NAME_EXPORT_URL = "export_url";
   @SerializedName(SERIALIZED_NAME_EXPORT_URL)
+  @javax.annotation.Nullable
   private String exportUrl;
 
   public static final String SERIALIZED_NAME_EXPORTS = "exports";
   @SerializedName(SERIALIZED_NAME_EXPORTS)
+  @javax.annotation.Nullable
   private List<Export> exports = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
+  @javax.annotation.Nullable
   private Map<String, Object> options = new HashMap<>();
 
   public Job() {
   }
 
-  public Job id(Integer id) {
+  public Job id(@javax.annotation.Nonnull Integer id) {
     this.id = id;
     return this;
   }
@@ -196,12 +210,12 @@ public class Job {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(@javax.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
 
-  public Job key(String key) {
+  public Job key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
@@ -215,12 +229,12 @@ public class Job {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public Job status(StatusEnum status) {
+  public Job status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -234,12 +248,12 @@ public class Job {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public Job failure(Failure failure) {
+  public Job failure(@javax.annotation.Nullable Failure failure) {
     this.failure = failure;
     return this;
   }
@@ -253,12 +267,12 @@ public class Job {
     return failure;
   }
 
-  public void setFailure(Failure failure) {
+  public void setFailure(@javax.annotation.Nullable Failure failure) {
     this.failure = failure;
   }
 
 
-  public Job sandbox(Boolean sandbox) {
+  public Job sandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
     return this;
   }
@@ -272,12 +286,12 @@ public class Job {
     return sandbox;
   }
 
-  public void setSandbox(Boolean sandbox) {
+  public void setSandbox(@javax.annotation.Nullable Boolean sandbox) {
     this.sandbox = sandbox;
   }
 
 
-  public Job createdAt(OffsetDateTime createdAt) {
+  public Job createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -291,12 +305,12 @@ public class Job {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Job finishedAt(OffsetDateTime finishedAt) {
+  public Job finishedAt(@javax.annotation.Nullable OffsetDateTime finishedAt) {
     this.finishedAt = finishedAt;
     return this;
   }
@@ -310,12 +324,12 @@ public class Job {
     return finishedAt;
   }
 
-  public void setFinishedAt(OffsetDateTime finishedAt) {
+  public void setFinishedAt(@javax.annotation.Nullable OffsetDateTime finishedAt) {
     this.finishedAt = finishedAt;
   }
 
 
-  public Job _import(ModelImport _import) {
+  public Job _import(@javax.annotation.Nullable ModelImport _import) {
     this._import = _import;
     return this;
   }
@@ -329,12 +343,12 @@ public class Job {
     return _import;
   }
 
-  public void setImport(ModelImport _import) {
+  public void setImport(@javax.annotation.Nullable ModelImport _import) {
     this._import = _import;
   }
 
 
-  public Job sourceFile(ModelFile sourceFile) {
+  public Job sourceFile(@javax.annotation.Nullable ModelFile sourceFile) {
     this.sourceFile = sourceFile;
     return this;
   }
@@ -348,12 +362,12 @@ public class Job {
     return sourceFile;
   }
 
-  public void setSourceFile(ModelFile sourceFile) {
+  public void setSourceFile(@javax.annotation.Nullable ModelFile sourceFile) {
     this.sourceFile = sourceFile;
   }
 
 
-  public Job targetFiles(List<ModelFile> targetFiles) {
+  public Job targetFiles(@javax.annotation.Nullable List<ModelFile> targetFiles) {
     this.targetFiles = targetFiles;
     return this;
   }
@@ -375,12 +389,12 @@ public class Job {
     return targetFiles;
   }
 
-  public void setTargetFiles(List<ModelFile> targetFiles) {
+  public void setTargetFiles(@javax.annotation.Nullable List<ModelFile> targetFiles) {
     this.targetFiles = targetFiles;
   }
 
 
-  public Job targetFormat(String targetFormat) {
+  public Job targetFormat(@javax.annotation.Nullable String targetFormat) {
     this.targetFormat = targetFormat;
     return this;
   }
@@ -394,12 +408,12 @@ public class Job {
     return targetFormat;
   }
 
-  public void setTargetFormat(String targetFormat) {
+  public void setTargetFormat(@javax.annotation.Nullable String targetFormat) {
     this.targetFormat = targetFormat;
   }
 
 
-  public Job creditCost(Integer creditCost) {
+  public Job creditCost(@javax.annotation.Nullable Integer creditCost) {
     this.creditCost = creditCost;
     return this;
   }
@@ -413,12 +427,12 @@ public class Job {
     return creditCost;
   }
 
-  public void setCreditCost(Integer creditCost) {
+  public void setCreditCost(@javax.annotation.Nullable Integer creditCost) {
     this.creditCost = creditCost;
   }
 
 
-  public Job exportUrl(String exportUrl) {
+  public Job exportUrl(@javax.annotation.Nullable String exportUrl) {
     this.exportUrl = exportUrl;
     return this;
   }
@@ -432,12 +446,12 @@ public class Job {
     return exportUrl;
   }
 
-  public void setExportUrl(String exportUrl) {
+  public void setExportUrl(@javax.annotation.Nullable String exportUrl) {
     this.exportUrl = exportUrl;
   }
 
 
-  public Job exports(List<Export> exports) {
+  public Job exports(@javax.annotation.Nullable List<Export> exports) {
     this.exports = exports;
     return this;
   }
@@ -459,12 +473,12 @@ public class Job {
     return exports;
   }
 
-  public void setExports(List<Export> exports) {
+  public void setExports(@javax.annotation.Nullable List<Export> exports) {
     this.exports = exports;
   }
 
 
-  public Job options(Map<String, Object> options) {
+  public Job options(@javax.annotation.Nullable Map<String, Object> options) {
     this.options = options;
     return this;
   }
@@ -486,7 +500,7 @@ public class Job {
     return options;
   }
 
-  public void setOptions(Map<String, Object> options) {
+  public void setOptions(@javax.annotation.Nullable Map<String, Object> options) {
     this.options = options;
   }
 

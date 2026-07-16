@@ -79,7 +79,8 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Your account and plan information. Use the data within the response body or within the response headers to determine your current credits remaining for the current billing period. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
         <tr><td> 401 </td><td> Forbidden - the request is not using authentication. The response will include an array of &#x60;errors&#x60;. </td><td>  -  </td></tr>
@@ -141,7 +142,8 @@ public class AccountApi {
      * @return Account
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Your account and plan information. Use the data within the response body or within the response headers to determine your current credits remaining for the current billing period. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
         <tr><td> 401 </td><td> Forbidden - the request is not using authentication. The response will include an array of &#x60;errors&#x60;. </td><td>  -  </td></tr>
@@ -158,7 +160,8 @@ public class AccountApi {
      * @return ApiResponse&lt;Account&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Your account and plan information. Use the data within the response body or within the response headers to determine your current credits remaining for the current billing period. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
         <tr><td> 401 </td><td> Forbidden - the request is not using authentication. The response will include an array of &#x60;errors&#x60;. </td><td>  -  </td></tr>
@@ -177,7 +180,8 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Your account and plan information. Use the data within the response body or within the response headers to determine your current credits remaining for the current billing period. </td><td>  * X-RateLimit-Limit -  <br>  * X-RateLimit-Remaining -  <br>  * Zamzar-Credits-Remaining -  <br>  * Zamzar-Test-Credits-Remaining -  <br>  </td></tr>
         <tr><td> 401 </td><td> Forbidden - the request is not using authentication. The response will include an array of &#x60;errors&#x60;. </td><td>  -  </td></tr>

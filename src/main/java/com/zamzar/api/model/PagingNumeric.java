@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,28 +48,32 @@ import com.zamzar.api.invoker.JSON;
 /**
  * PagingNumeric
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PagingNumeric {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nullable
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
+  @javax.annotation.Nullable
   private Integer first;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
+  @javax.annotation.Nullable
   private Integer last;
 
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
+  @javax.annotation.Nullable
   private Integer limit;
 
   public PagingNumeric() {
   }
 
-  public PagingNumeric totalCount(Integer totalCount) {
+  public PagingNumeric totalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
@@ -84,12 +87,12 @@ public class PagingNumeric {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public PagingNumeric first(Integer first) {
+  public PagingNumeric first(@javax.annotation.Nullable Integer first) {
     this.first = first;
     return this;
   }
@@ -103,12 +106,12 @@ public class PagingNumeric {
     return first;
   }
 
-  public void setFirst(Integer first) {
+  public void setFirst(@javax.annotation.Nullable Integer first) {
     this.first = first;
   }
 
 
-  public PagingNumeric last(Integer last) {
+  public PagingNumeric last(@javax.annotation.Nullable Integer last) {
     this.last = last;
     return this;
   }
@@ -122,12 +125,12 @@ public class PagingNumeric {
     return last;
   }
 
-  public void setLast(Integer last) {
+  public void setLast(@javax.annotation.Nullable Integer last) {
     this.last = last;
   }
 
 
-  public PagingNumeric limit(Integer limit) {
+  public PagingNumeric limit(@javax.annotation.Nullable Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -141,7 +144,7 @@ public class PagingNumeric {
     return limit;
   }
 
-  public void setLimit(Integer limit) {
+  public void setLimit(@javax.annotation.Nullable Integer limit) {
     this.limit = limit;
   }
 

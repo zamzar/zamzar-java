@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,28 +49,32 @@ import com.zamzar.api.invoker.JSON;
 /**
  * AccountPlan
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class AccountPlan {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_PRICE_PER_MONTH = "price_per_month";
   @SerializedName(SERIALIZED_NAME_PRICE_PER_MONTH)
+  @javax.annotation.Nullable
   private Float pricePerMonth;
 
   public static final String SERIALIZED_NAME_CONVERSIONS_PER_MONTH = "conversions_per_month";
   @SerializedName(SERIALIZED_NAME_CONVERSIONS_PER_MONTH)
+  @javax.annotation.Nullable
   private Integer conversionsPerMonth;
 
   public static final String SERIALIZED_NAME_MAXIMUM_FILE_SIZE = "maximum_file_size";
   @SerializedName(SERIALIZED_NAME_MAXIMUM_FILE_SIZE)
+  @javax.annotation.Nullable
   private Long maximumFileSize;
 
   public AccountPlan() {
   }
 
-  public AccountPlan name(String name) {
+  public AccountPlan name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -85,12 +88,12 @@ public class AccountPlan {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public AccountPlan pricePerMonth(Float pricePerMonth) {
+  public AccountPlan pricePerMonth(@javax.annotation.Nullable Float pricePerMonth) {
     this.pricePerMonth = pricePerMonth;
     return this;
   }
@@ -104,12 +107,12 @@ public class AccountPlan {
     return pricePerMonth;
   }
 
-  public void setPricePerMonth(Float pricePerMonth) {
+  public void setPricePerMonth(@javax.annotation.Nullable Float pricePerMonth) {
     this.pricePerMonth = pricePerMonth;
   }
 
 
-  public AccountPlan conversionsPerMonth(Integer conversionsPerMonth) {
+  public AccountPlan conversionsPerMonth(@javax.annotation.Nullable Integer conversionsPerMonth) {
     this.conversionsPerMonth = conversionsPerMonth;
     return this;
   }
@@ -123,12 +126,12 @@ public class AccountPlan {
     return conversionsPerMonth;
   }
 
-  public void setConversionsPerMonth(Integer conversionsPerMonth) {
+  public void setConversionsPerMonth(@javax.annotation.Nullable Integer conversionsPerMonth) {
     this.conversionsPerMonth = conversionsPerMonth;
   }
 
 
-  public AccountPlan maximumFileSize(Long maximumFileSize) {
+  public AccountPlan maximumFileSize(@javax.annotation.Nullable Long maximumFileSize) {
     this.maximumFileSize = maximumFileSize;
     return this;
   }
@@ -142,7 +145,7 @@ public class AccountPlan {
     return maximumFileSize;
   }
 
-  public void setMaximumFileSize(Long maximumFileSize) {
+  public void setMaximumFileSize(@javax.annotation.Nullable Long maximumFileSize) {
     this.maximumFileSize = maximumFileSize;
   }
 

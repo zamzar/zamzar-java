@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,24 +49,27 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Your current subscription plan and the number of conversions that you have remaining in this billing period.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Account {
   public static final String SERIALIZED_NAME_TEST_CREDITS_REMAINING = "test_credits_remaining";
   @SerializedName(SERIALIZED_NAME_TEST_CREDITS_REMAINING)
+  @javax.annotation.Nullable
   private Integer testCreditsRemaining;
 
   public static final String SERIALIZED_NAME_CREDITS_REMAINING = "credits_remaining";
   @SerializedName(SERIALIZED_NAME_CREDITS_REMAINING)
+  @javax.annotation.Nullable
   private Integer creditsRemaining;
 
   public static final String SERIALIZED_NAME_PLAN = "plan";
   @SerializedName(SERIALIZED_NAME_PLAN)
+  @javax.annotation.Nullable
   private AccountPlan plan;
 
   public Account() {
   }
 
-  public Account testCreditsRemaining(Integer testCreditsRemaining) {
+  public Account testCreditsRemaining(@javax.annotation.Nullable Integer testCreditsRemaining) {
     this.testCreditsRemaining = testCreditsRemaining;
     return this;
   }
@@ -81,12 +83,12 @@ public class Account {
     return testCreditsRemaining;
   }
 
-  public void setTestCreditsRemaining(Integer testCreditsRemaining) {
+  public void setTestCreditsRemaining(@javax.annotation.Nullable Integer testCreditsRemaining) {
     this.testCreditsRemaining = testCreditsRemaining;
   }
 
 
-  public Account creditsRemaining(Integer creditsRemaining) {
+  public Account creditsRemaining(@javax.annotation.Nullable Integer creditsRemaining) {
     this.creditsRemaining = creditsRemaining;
     return this;
   }
@@ -100,12 +102,12 @@ public class Account {
     return creditsRemaining;
   }
 
-  public void setCreditsRemaining(Integer creditsRemaining) {
+  public void setCreditsRemaining(@javax.annotation.Nullable Integer creditsRemaining) {
     this.creditsRemaining = creditsRemaining;
   }
 
 
-  public Account plan(AccountPlan plan) {
+  public Account plan(@javax.annotation.Nullable AccountPlan plan) {
     this.plan = plan;
     return this;
   }
@@ -119,7 +121,7 @@ public class Account {
     return plan;
   }
 
-  public void setPlan(AccountPlan plan) {
+  public void setPlan(@javax.annotation.Nullable AccountPlan plan) {
     this.plan = plan;
   }
 

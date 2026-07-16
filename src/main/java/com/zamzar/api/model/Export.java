@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,14 +49,16 @@ import com.zamzar.api.invoker.JSON;
 /**
  * An object representing the process of copying converted files to the location specified in the &#x60;export_url&#x60; (when submitting a job via the &#x60;/jobs&#x60; endpoint). The &#x60;status&#x60; will be set to &#x60;initialising&#x60; or &#x60;successful&#x60;.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Export {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private Integer id;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   /**
@@ -118,16 +119,18 @@ public class Export {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_FAILURE = "failure";
   @SerializedName(SERIALIZED_NAME_FAILURE)
+  @javax.annotation.Nullable
   private Failure failure;
 
   public Export() {
   }
 
-  public Export id(Integer id) {
+  public Export id(@javax.annotation.Nonnull Integer id) {
     this.id = id;
     return this;
   }
@@ -141,12 +144,12 @@ public class Export {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(@javax.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
 
-  public Export url(String url) {
+  public Export url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -160,12 +163,12 @@ public class Export {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public Export status(StatusEnum status) {
+  public Export status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -179,12 +182,12 @@ public class Export {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public Export failure(Failure failure) {
+  public Export failure(@javax.annotation.Nullable Failure failure) {
     this.failure = failure;
     return this;
   }
@@ -198,7 +201,7 @@ public class Export {
     return failure;
   }
 
-  public void setFailure(Failure failure) {
+  public void setFailure(@javax.annotation.Nullable Failure failure) {
     this.failure = failure;
   }
 

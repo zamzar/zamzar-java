@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,20 +51,22 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Represents the source format and an array of valid target formats.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Format {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
   @SerializedName(SERIALIZED_NAME_TARGETS)
+  @javax.annotation.Nullable
   private List<FormatTargetsInner> targets = new ArrayList<>();
 
   public Format() {
   }
 
-  public Format name(String name) {
+  public Format name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -79,12 +80,12 @@ public class Format {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Format targets(List<FormatTargetsInner> targets) {
+  public Format targets(@javax.annotation.Nullable List<FormatTargetsInner> targets) {
     this.targets = targets;
     return this;
   }
@@ -106,7 +107,7 @@ public class Format {
     return targets;
   }
 
-  public void setTargets(List<FormatTargetsInner> targets) {
+  public void setTargets(@javax.annotation.Nullable List<FormatTargetsInner> targets) {
     this.targets = targets;
   }
 

@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,20 +52,22 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of import objects. Newer imports appear before older imports.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Imports {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
+  @javax.annotation.Nullable
   private PagingNumeric paging;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
+  @javax.annotation.Nullable
   private List<ModelImport> data = new ArrayList<>();
 
   public Imports() {
   }
 
-  public Imports paging(PagingNumeric paging) {
+  public Imports paging(@javax.annotation.Nullable PagingNumeric paging) {
     this.paging = paging;
     return this;
   }
@@ -80,12 +81,12 @@ public class Imports {
     return paging;
   }
 
-  public void setPaging(PagingNumeric paging) {
+  public void setPaging(@javax.annotation.Nullable PagingNumeric paging) {
     this.paging = paging;
   }
 
 
-  public Imports data(List<ModelImport> data) {
+  public Imports data(@javax.annotation.Nullable List<ModelImport> data) {
     this.data = data;
     return this;
   }
@@ -107,7 +108,7 @@ public class Imports {
     return data;
   }
 
-  public void setData(List<ModelImport> data) {
+  public void setData(@javax.annotation.Nullable List<ModelImport> data) {
     this.data = data;
   }
 

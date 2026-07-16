@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,20 +48,22 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Further information about the cause of the error (only included for some error codes)
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ErrorContext {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private String value;
 
   public ErrorContext() {
   }
 
-  public ErrorContext description(String description) {
+  public ErrorContext description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -76,12 +77,12 @@ public class ErrorContext {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ErrorContext value(String value) {
+  public ErrorContext value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -95,7 +96,7 @@ public class ErrorContext {
     return value;
   }
 
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 

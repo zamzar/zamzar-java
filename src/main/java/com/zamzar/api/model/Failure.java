@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,20 +48,22 @@ import com.zamzar.api.invoker.JSON;
 /**
  * If a process fails, the response will include a failure object to describe the error. If a process is either incomplete or successful, the failure object will not be present.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Failure {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nullable
   private Integer code;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public Failure() {
   }
 
-  public Failure code(Integer code) {
+  public Failure code(@javax.annotation.Nullable Integer code) {
     this.code = code;
     return this;
   }
@@ -76,12 +77,12 @@ public class Failure {
     return code;
   }
 
-  public void setCode(Integer code) {
+  public void setCode(@javax.annotation.Nullable Integer code) {
     this.code = code;
   }
 
 
-  public Failure message(String message) {
+  public Failure message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -95,7 +96,7 @@ public class Failure {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 

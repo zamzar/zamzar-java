@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,28 +48,32 @@ import com.zamzar.api.invoker.JSON;
 /**
  * When you request a list of of all resources of any type (files, formats, jobs), you will receive a paged collection as a response. A paged collection allows you to view a subset of the entire collection (limited to 50 elements) and makes it easy to implement pagination in your application. Use the &#x60;limit&#x60; parameter to limit the number of results and the &#x60;after&#x60; parameter to request the next page of results (based on the value of &#x60;last&#x60; within the paging object).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PagingString {
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
+  @javax.annotation.Nullable
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
+  @javax.annotation.Nullable
   private String first;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
+  @javax.annotation.Nullable
   private String last;
 
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
+  @javax.annotation.Nullable
   private Integer limit;
 
   public PagingString() {
   }
 
-  public PagingString totalCount(Integer totalCount) {
+  public PagingString totalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
@@ -84,12 +87,12 @@ public class PagingString {
     return totalCount;
   }
 
-  public void setTotalCount(Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nullable Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public PagingString first(String first) {
+  public PagingString first(@javax.annotation.Nullable String first) {
     this.first = first;
     return this;
   }
@@ -103,12 +106,12 @@ public class PagingString {
     return first;
   }
 
-  public void setFirst(String first) {
+  public void setFirst(@javax.annotation.Nullable String first) {
     this.first = first;
   }
 
 
-  public PagingString last(String last) {
+  public PagingString last(@javax.annotation.Nullable String last) {
     this.last = last;
     return this;
   }
@@ -122,12 +125,12 @@ public class PagingString {
     return last;
   }
 
-  public void setLast(String last) {
+  public void setLast(@javax.annotation.Nullable String last) {
     this.last = last;
   }
 
 
-  public PagingString limit(Integer limit) {
+  public PagingString limit(@javax.annotation.Nullable Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -141,7 +144,7 @@ public class PagingString {
     return limit;
   }
 
-  public void setLimit(Integer limit) {
+  public void setLimit(@javax.annotation.Nullable Integer limit) {
     this.limit = limit;
   }
 
