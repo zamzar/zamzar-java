@@ -52,7 +52,7 @@ import com.zamzar.api.invoker.JSON;
 /**
  * Contains a paged collection of import objects. Newer imports appear before older imports.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.24.0")
 public class Imports {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)
